@@ -1,0 +1,185 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    {% block cssblock %}
+    <link rel="stylesheet" href="{% static 'dashboard/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/Ionicons/css/ionicons.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/AdminLTE.min.css' %}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/skins/_all-skins.min.css' %}">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/morris.js/morris.css' %}">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/jvectormap/jquery-jvectormap.css' %}">
+  <!-- Date Picker -->
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/bootstrap-daterangepicker/daterangepicker.css' %}">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
+        {% endblock %}
+
+
+    {% block content %}
+    <div class="box ">
+    <div class="row">
+        <div class="col-sm-12">
+          <div class="box-header bg-purple">
+            <h3 class="box-title">Quỹ An Sinh</h3>
+        </div><br>
+          <div class="col-sm-4 form-group">
+            <label>Từ (điểm)</label>
+            <input type="text" class="form-control" name="from_point" value="">
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Đến (điểm)</label>
+            <input type="text" class="form-control" name="to_point" value="">
+        </div>
+        <div class="col-sm-4 form-group">
+            <label>Tên đăng nhập</label>
+            <div class="input-group input-group-sm">
+                <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                      <button type="button" class="btn btn-info btn-warning">Tìm kiếm</button>
+                    </span>
+              </div>
+        </div>
+        </div>
+
+  <div class="col-md-12">
+    <h4 style="margin-left: 10px;">Tổng số tài khoản: 89</h4>
+
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+            <th>STT</th>
+            <th>Thông tin</th>
+            <th>Số điểm An Sinh</th>
+            <th>Số dư BV</th>
+          </tr>
+          <tr>
+            <td>
+                46380
+            </td>
+            <td>
+                <div><span class="text-danger bold">Hieuhanh</span> <span class="text-info">(hanhnguyengdkd@gmail.com)</span></div>
+                <div>Họ tên: Nguyễn Thị Hạnh</div>
+                <div>Ngày tạo: 09-13-2019 11:43:32</div>
+                <div>Lần đăng nhập cuối: 01-16-2020 17:48:08</div>
+                <div>Người giới thiệu: Dungthanh (dieuhanhmientaytv@gmail.com)</div>
+                <div>Người đỡ đầu: Dungthanh (dieuhanhmientaytv@gmail.com)</div>
+
+            </td>
+          <td>
+            50
+        </td>
+            <td>4.95 BV</td>
+            
+          </tr>
+          <tr>
+            <td>
+                4989
+            </td>
+            <td>
+                <div><span class="text-danger bold">Thanhmai</span> <span class="text-info">(tathanhmai84@gmail.com)</span></div>
+                <div>Họ tên: Tạ Thị Thanh Mai</div>
+                <div>Ngày tạo: 07-22-2019 11:39:38</div>
+                <div>Lần đăng nhập cuối: 02-05-2020 14:15:20</div>
+                <div>Người giới thiệu: Duongthanhcongtc (duongthanhcongtc@gmail.com)</div>
+                <div>Người đỡ đầu: Duongthanhcongtc (duongthanhcongtc@gmail.com)</div>
+
+            </td>
+          <td>
+            50
+        </td>
+            <td>0.81 BV</td>
+            
+          </tr>
+        </tbody>
+        
+      </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
+<!-- /.col -->
+</div>
+    {% endblock %}
+
+<!-- jQuery 3 -->
+
+
+
+
+
+   {% block jsblock %}
+       <script src="{% static 'dashboard/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'dashboard/bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'dashboard/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Morris.js charts -->
+<script src="{% static 'dashboard/bower_components/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'dashboard/bower_components/morris.js/morris.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'dashboard/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+<!-- jvectormap -->
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'dashboard/bower_components/jquery-knob/dist/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'dashboard/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'dashboard/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- datepicker -->
+<script src="{% static 'dashboard/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'dashboard/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'dashboard/bower_components/fastclick/lib/fastclick.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dashboard/dist/js/adminlte.min.js' %}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dashboard/dist/js/demo.js' %}"></script>
+
+
+       <!-- FLOT CHARTS -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.js' %}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.resize.js' %}"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.pie.js' %}"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.categories.js' %}"></script>
+<!-- ChartJS -->
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+{#<script src="{% static 'dashboard/bower_components/chart.js/Chart.js' %}"></script>#}
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+
+
+<script src="{% static 'dashboard/myscript/horizontal.js' %}"></script>
+     <script>
+
+
+       </script>
+
+        {% endblock %}
+
+
+
+

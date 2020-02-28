@@ -1,0 +1,1822 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    {% block cssblock %}
+    <link rel="stylesheet" href="{% static 'dashboard/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/Ionicons/css/ionicons.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/AdminLTE.min.css' %}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/skins/_all-skins.min.css' %}">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/morris.js/morris.css' %}">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/jvectormap/jquery-jvectormap.css' %}">
+  <!-- Date Picker -->
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/bootstrap-daterangepicker/daterangepicker.css' %}">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
+  <style>
+  .form-group span{
+    color: red;
+  }
+  .page-headernew{
+    color: #3c8dbc;
+    font-weight: 550;
+    font-size: 20px;
+  }
+  .table>tbody>tr>td{
+    vertical-align: middle;
+  }
+  </style>     
+  {% endblock %}
+
+
+    {% block content %}
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+         <div class="box">
+            <!-- /.box-header -->
+            <div class="box-body">
+                <div class="callout callout-info">
+                    Danh sách khách hàng - Hợp đồng bảo hiểm
+                </div>
+                <form role="form">
+                    <div class="box-body">
+                      <div class="form-group col-md-2">
+                        <label for="exampleInputEmail1">Từ khoá</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Số YCBH hoặc số HĐ">
+                      </div>
+    
+                      <div class="form-group col-md-2">
+                        <label for="exampleInputEmail1">Khách hàng</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Số CMND hoặc họ tên">
+                      </div>
+    
+                      <div class="form-group col-md-2">
+                        <label>Đối tác</label>
+                        <select class="form-control">
+                          <option>Lựa chọn đối tác</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                          <option>option 5</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-2">
+                        <label>Trạng thái </label>
+                        <select class="form-control">
+                          <option>Tất cả</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                          <option>option 5</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-1">
+                        <label>Tháng</label>
+                        <select class="form-control">
+                          <option>Tất cả</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                          <option>option 5</option>
+                        </select>
+                      </div>
+                      <div class="form-group col-md-1">
+                        <label>Năm</label>
+                        <select class="form-control">
+                          <option>Tất cả</option>
+                          <option>option 2</option>
+                          <option>option 3</option>
+                          <option>option 4</option>
+                          <option>option 5</option>
+                        </select>
+                      </div>
+                      <div class="btn-group col-md-2">
+                        <label>Search</label>
+                      <button type="button" class="btn btn-block btn-primary btn-sm ">Search</button>
+                    </div>
+                    
+                  </div>
+                    <!-- /.box-body -->
+                  </form>
+                  <div style="padding:0 15px;"><p style="font-weight: bold; color: #026fce; font-size: 20px">-Tổng số hợp đồng: 455 - Tổng số tiền: 4,480,621,150đ - Tổng BV: 164,491BV </p></div>
+                  <div class="box-body table-responsive" style="padding-top:0px;">
+                    <div id="example2_wrapper" class="dataTables_wrapper form-inline" role="grid">
+                        <table id="example2" class="table table-bordered table-hover dataTable" aria-describedby="example2_info">
+                            <thead>
+                                <tr role="row">
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">STT</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Bên mua BH</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Người được BH</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Thông tin HĐ</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Ngày tháng</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Phí bảo hiểm</th>
+                                    <th class="sorting" role="columnheader" tabindex="0" aria-controls="example2" rowspan="1" colspan="1">Trạng thái</th>
+                                </tr>
+                            </thead>
+                
+                            <tbody role="alert" aria-live="polite" aria-relevant="all">
+                                <tr class="odd">
+                                    <td>1</td>
+                                    <td>
+                                        Họ tên: Nguyễn thị thúy hồng
+                                        <br> Ngày sinh: 19-03-1990
+                                        <br> Số CMND/hộ chiếu: 001190021696
+                                        <br> Điện thoại: 0588489997
+                                        <br> Địa chỉ: - Quảng Ninh
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ THÚY HỒNG
+                                        <br> Ngày sinh: 19-03-1990
+                                        <br> Số CMND/hộ chiếu: 001190021696
+                                        <br> Điện thoại: 0588489997
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002060006
+                                        <br> CTV: Nguyễn thị thúy hồng </td>
+                
+                                    <td>Ngày nộp: 06-02-2020
+                                        <br> Ngày chuyển: 06-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,850,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>2</td>
+                                    <td>
+                                        Họ tên: Pham Thi Thuy
+                                        <br> Ngày sinh: 23-12-1984
+                                        <br> Số CMND/hộ chiếu: 281195378
+                                        <br> Điện thoại: 0378871995
+                                        <br> Địa chỉ: 76/10 khu b Tan Thang Tan Binh Di An Binh Duong - Bình Dương
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: PHẠM THỊ THỦY
+                                        <br> Ngày sinh: 23-12-1984
+                                        <br> Số CMND/hộ chiếu: 281195378
+                                        <br> Điện thoại: 0378871995
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 233475.3
+                                        <br> Mã YCBH: 1912270014.3
+                                        <br> CTV: Pham Thi Thuy </td>
+                
+                                    <td>Ngày nộp: 27-12-2019
+                                        <br> Ngày chuyển: 27-12-2019
+                                        <br> Ngày hiệu lực: 27-12-2019
+                                        <br> Ngày phát hành: 06-01-2020
+                                        <br> Ngày ACK: 14-01-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 11,305,000đ
+                
+                                    </td>
+                                    <td>Đã xác nhận ngày bàn giao</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>3</td>
+                                    <td>
+                                        Họ tên: TRƯƠNG THỊ TĨNH
+                                        <br> Ngày sinh: 15-12-1972
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 0822184748
+                                        <br> Địa chỉ: 9/25 Thị trấn Eatinh, Cư Jut , Đak nông - Đắk Nông
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: TRƯƠNG THỊ TĨNH
+                                        <br> Ngày sinh:
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 822184748
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 230875
+                                        <br> Mã YCBH: 1911250024
+                                        <br> CTV: Trương Thị Tĩnh </td>
+                
+                                    <td>Ngày nộp: 25-11-2019
+                                        <br> Ngày chuyển: 25-11-2019
+                                        <br> Ngày hiệu lực: 25-11-2019
+                                        <br> Ngày phát hành: 12-12-2019
+                                        <br> Ngày ACK: 30-12-2019
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 16,641,000đ
+                
+                                    </td>
+                                    <td>Đã xác nhận ngày bàn giao</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>4</td>
+                                    <td>
+                                        Họ tên: LÊ THỊ KIM PHƯỢNG
+                                        <br> Ngày sinh: 01-01-1986
+                                        <br> Số CMND/hộ chiếu: 290960326
+                                        <br> Điện thoại: 0987432306
+                                        <br> Địa chỉ: trường thọ, trường hòa, hòa thành, tây ninh - TP HCM
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: LÊ THỊ KIM PHƯỢNG
+                                        <br> Ngày sinh: 01-01-1986
+                                        <br> Số CMND/hộ chiếu: 290960326
+                                        <br> Điện thoại: 0987432306
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 0227824
+                                        <br> Mã YCBH: 1910140027
+                                        <br> CTV: LÊ THỊ KIM PHƯỢNG </td>
+                
+                                    <td>Ngày nộp: 17-10-2019
+                                        <br> Ngày chuyển: 17-10-2019
+                                        <br> Ngày hiệu lực: 17-10-2019
+                                        <br> Ngày phát hành: 20-11-2019
+                                        <br> Ngày ACK: 23-11-2019
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 10,530,000đ
+                
+                                    </td>
+                                    <td>Đã xác nhận ngày bàn giao</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>5</td>
+                                    <td>
+                                        Họ tên: Trương Thị Tĩnh
+                                        <br> Ngày sinh: 15-12-1972
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 08 22184748
+                                        <br> Địa chỉ: Thị trấn Eatling, Cư Jut, Đak Nông - Đắk Nông
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: TRƯƠNG THỊ TĨNH
+                                        <br> Ngày sinh: 15-12-1972
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 0822184748
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 230875.1
+                                        <br> Mã YCBH: 1911250023.3
+                                        <br> CTV: Trương Thị Tĩnh </td>
+                
+                                    <td>Ngày nộp: 26-11-2019
+                                        <br> Ngày chuyển: 26-11-2019
+                                        <br> Ngày hiệu lực: 26-11-2019
+                                        <br> Ngày phát hành: 12-12-2019
+                                        <br> Ngày ACK: 30-12-2019
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 16,641,000đ
+                
+                                    </td>
+                                    <td>Đã xác nhận ngày bàn giao</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>6</td>
+                                    <td>
+                                        Họ tên: Trương Thị Tĩnh
+                                        <br> Ngày sinh: 15-12-1972
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 08 22184748
+                                        <br> Địa chỉ: Thị trấn Eatling, Cư Jut, Đak Nông - Đắk Nông
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: TRƯƠNG THỊ TĨNH
+                                        <br> Ngày sinh: 15-12-1972
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 0822184748
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 1911250023.2
+                                        <br> CTV: Trương Thị Tĩnh </td>
+                
+                                    <td>Ngày nộp: 26-11-2019
+                                        <br> Ngày chuyển: 06-02-2020
+                                        <br> Ngày hiệu lực: 06-02-2020
+                                        <br> Ngày phát hành: 06-02-2020
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 0đ
+                
+                                    </td>
+                                    <td>Hệ thống xác nhận hủy</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>7</td>
+                                    <td>
+                                        Họ tên: Trương Thị Tĩnh
+                                        <br> Ngày sinh: 15-12-1972
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 08 22184748
+                                        <br> Địa chỉ: Thị trấn Eatling, Cư Jut, Đak Nông - Đắk Nông
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: TRƯƠNG THỊ TĨNH
+                                        <br> Ngày sinh: 15-12-1972
+                                        <br> Số CMND/hộ chiếu: 245043476
+                                        <br> Điện thoại: 0822184748
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 1911250023.1
+                                        <br> CTV: Trương Thị Tĩnh </td>
+                
+                                    <td>Ngày nộp: 26-11-2019
+                                        <br> Ngày chuyển: 06-02-2020
+                                        <br> Ngày hiệu lực: 06-02-2020
+                                        <br> Ngày phát hành: 06-02-2020
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 0đ
+                
+                                    </td>
+                                    <td>Hệ thống xác nhận hủy</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>8</td>
+                                    <td>
+                                        Họ tên: Trần Hậu Quế
+                                        <br> Ngày sinh: 10-09-1974
+                                        <br> Số CMND/hộ chiếu: 183224234
+                                        <br> Điện thoại: 0983694628
+                                        <br> Địa chỉ: Số 22 Quang Trung TP Hà Tĩnh - Hà Tĩnh
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: TRẦN HẬU QUẾ
+                                        <br> Ngày sinh: 10-09-1974
+                                        <br> Số CMND/hộ chiếu: 183224234
+                                        <br> Điện thoại: 0983694628
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002050016
+                                        <br> CTV: Trần Hậu Quế </td>
+                
+                                    <td>Ngày nộp: 05-02-2020
+                                        <br> Ngày chuyển: 05-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,915,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>9</td>
+                                    <td>
+                                        Họ tên: HÀ THỊ THANH BÌNH
+                                        <br> Ngày sinh: 21-06-1985
+                                        <br> Số CMND/hộ chiếu: 131655559
+                                        <br> Điện thoại: 0386459084
+                                        <br> Địa chỉ: ĐỘI 11, TRƯNG VƯƠNG, VIỆT TRÌ - Phú Thọ
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: HÀ THỊ THANH BÌNH
+                                        <br> Ngày sinh: 21-06-1985
+                                        <br> Số CMND/hộ chiếu: 131655559
+                                        <br> Điện thoại: 0386459084
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002060003
+                                        <br> CTV: CÔNG TY </td>
+                
+                                    <td>Ngày nộp: 06-02-2020
+                                        <br> Ngày chuyển: 06-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,990,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>10</td>
+                                    <td>
+                                        Họ tên: NGUYỄN ĐỨC NĂNG
+                                        <br> Ngày sinh: 13-05-1990
+                                        <br> Số CMND/hộ chiếu: 241245771
+                                        <br> Điện thoại: 0377247158
+                                        <br> Địa chỉ: THÔN 6, CƯBAO, THỊ XÃ BUÔN HỒ, DAKLAK - Đắk Lắk
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN ĐỨC NĂNG
+                                        <br> Ngày sinh: 13-05-1990
+                                        <br> Số CMND/hộ chiếu: 241245771
+                                        <br> Điện thoại: 377247158
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 227272
+                                        <br> Mã YCBH: 1910160010
+                                        <br> CTV: Nguyễn Đức Năng </td>
+                
+                                    <td>Ngày nộp: 16-10-2019
+                                        <br> Ngày chuyển: 16-10-2019
+                                        <br> Ngày hiệu lực: 16-10-2019
+                                        <br> Ngày phát hành: 24-10-2019
+                                        <br> Ngày ACK: 25-11-2019
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 10,450,000đ
+                
+                                    </td>
+                                    <td>Đã xác nhận ngày bàn giao</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>11</td>
+                                    <td>
+                                        Họ tên: NGUYỄN XUÂN PHÚ
+                                        <br> Ngày sinh: 10-12-1982
+                                        <br> Số CMND/hộ chiếu: 273128567
+                                        <br> Điện thoại: 0933783181
+                                        <br> Địa chỉ: 4/33 KHA VẠN CÂN, PHƯỜNG 7, VŨNG TÀU - Bà Rịa - Vũng Tàu
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN XUÂN PHÚ
+                                        <br> Ngày sinh: 10-12-1982
+                                        <br> Số CMND/hộ chiếu: 273128567
+                                        <br> Điện thoại: 0933783181
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 235192
+                                        <br> Mã YCBH: 2001100011.1
+                                        <br> CTV: CÔNG TY </td>
+                
+                                    <td>Ngày nộp: 13-01-2020
+                                        <br> Ngày chuyển: 20-01-2020
+                                        <br> Ngày hiệu lực: 13-01-2020
+                                        <br> Ngày phát hành: 16-01-2020
+                                        <br> Ngày ACK: 05-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,880,000đ
+                
+                                    </td>
+                                    <td>Đã xác nhận ngày bàn giao</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>12</td>
+                                    <td>
+                                        Họ tên: Nguyễn Thúy Hoài Nhi
+                                        <br> Ngày sinh: 07-10-1982
+                                        <br> Số CMND/hộ chiếu: 090899161
+                                        <br> Điện thoại: 0392950225
+                                        <br> Địa chỉ: Phường Quang Trung, thành phố Thái Nguyên - Thái Nguyên
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN THÚY HOÀI NHI
+                                        <br> Ngày sinh: 01-10-1982
+                                        <br> Số CMND/hộ chiếu: 090899161
+                                        <br> Điện thoại: 090899161
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 236318
+                                        <br> Mã YCBH: .2001160029
+                                        <br> CTV: Nguyễn Thúy Hoài Nhi </td>
+                
+                                    <td>Ngày nộp: 16-01-2020
+                                        <br> Ngày chuyển: 16-01-2020
+                                        <br> Ngày hiệu lực: 30-01-2020
+                                        <br> Ngày phát hành: 30-01-2020
+                                        <br> Ngày ACK: 05-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,100,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>13</td>
+                                    <td>
+                                        Họ tên: Mai Thị Thanh Hà
+                                        <br> Ngày sinh: 08-05-1970
+                                        <br> Số CMND/hộ chiếu: 090898898
+                                        <br> Điện thoại: 0854569961
+                                        <br> Địa chỉ: Tổ 1, phường Trung Thành, tp Thái Nguyên, Thái Nguyên - Thái Nguyên
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: Mai Thị Thanh Hà
+                                        <br> Ngày sinh: 08-05-1970
+                                        <br> Số CMND/hộ chiếu: 090898898
+                                        <br> Điện thoại: 0854569961
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002050009
+                                        <br> CTV: Mai Thị Thanh Hà </td>
+                
+                                    <td>Ngày nộp: 06-02-2020
+                                        <br> Ngày chuyển: 06-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,000,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>14</td>
+                                    <td>
+                                        Họ tên: Nguyễn Đình Đức
+                                        <br> Ngày sinh: 21-07-1995
+                                        <br> Số CMND/hộ chiếu: 091848572
+                                        <br> Điện thoại: 0966188038
+                                        <br> Địa chỉ: Phường Trung Thành, thành phố Thái Nguyên, Thái Nguyên - Thái Nguyên
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN ĐÌNH ĐỨC
+                                        <br> Ngày sinh: 21-07-1995
+                                        <br> Số CMND/hộ chiếu: 091848572
+                                        <br> Điện thoại: 0966188038
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002050007
+                                        <br> CTV: Nguyễn Đình Đức </td>
+                
+                                    <td>Ngày nộp: 05-02-2020
+                                        <br> Ngày chuyển: 05-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 13,300,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>15</td>
+                                    <td>
+                                        Họ tên: Văn Thành Đắt Liểm
+                                        <br> Ngày sinh: 20-02-1987
+                                        <br> Số CMND/hộ chiếu: 331477225
+                                        <br> Điện thoại: 0979671709
+                                        <br> Địa chỉ: An Khánh, Tân An Thạnh, Bình Tân, Vĩnh Long - Vĩnh Long
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: VĂN THÀNH ĐẮT LIỂM
+                                        <br> Ngày sinh: 20-07-1987
+                                        <br> Số CMND/hộ chiếu: 331477225
+                                        <br> Điện thoại: 0979671709
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 230142
+                                        <br> Mã YCBH: 1911180021
+                                        <br> CTV: Văn Thành Đắt Liểm </td>
+                
+                                    <td>Ngày nộp: 18-11-2019
+                                        <br> Ngày chuyển: 18-11-2019
+                                        <br> Ngày hiệu lực: 18-11-2019
+                                        <br> Ngày phát hành: 28-11-2019
+                                        <br> Ngày ACK: 29-11-2019
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 10,541,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>16</td>
+                                    <td>
+                                        Họ tên: HÀ ANH KHÁNH
+                                        <br> Ngày sinh: 06-05-1998
+                                        <br> Số CMND/hộ chiếu: 206141070
+                                        <br> Điện thoại: 0935172606
+                                        <br> Địa chỉ: 488 ĐIỆN BIÊN PHỦ, QUẬN BÌNH THẠNH, TP.HCM - TP HCM
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: HÀ ANH KHÁNH
+                                        <br> Ngày sinh: 06-05-1998
+                                        <br> Số CMND/hộ chiếu: 206141070
+                                        <br> Điện thoại: 0935172606
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Cathay
+                                        <br> Số HD: B11000037199
+                                        <br> Mã YCBH: 01A004121267.1
+                                        <br> CTV: HÀ ANH KHÁNH </td>
+                
+                                    <td>Ngày nộp: 09-01-2020
+                                        <br> Ngày chuyển: 09-01-2020
+                                        <br> Ngày hiệu lực: 09-01-2020
+                                        <br> Ngày phát hành: 16-01-2020
+                                        <br> Ngày ACK: 03-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 4,000,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>17</td>
+                                    <td>
+                                        Họ tên: DƯƠNG VĂN LÂM
+                                        <br> Ngày sinh: 08-04-1982
+                                        <br> Số CMND/hộ chiếu: 090917154
+                                        <br> Điện thoại: 0977402182
+                                        <br> Địa chỉ: Xã Xuân Phương - H. Phú Bình - T. Thái Nguyên - Thái Nguyên
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: Dương Văn Lâm
+                                        <br> Ngày sinh: 08-04-1982
+                                        <br> Số CMND/hộ chiếu: 090917154
+                                        <br> Điện thoại: 0977402182
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002050005
+                                        <br> CTV: DƯƠNG VĂN LÂM </td>
+                
+                                    <td>Ngày nộp: 05-02-2020
+                                        <br> Ngày chuyển: 05-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 7,351,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>18</td>
+                                    <td>
+                                        Họ tên: ĐOÀN THỊ HƯƠNG
+                                        <br> Ngày sinh: 02-10-1993
+                                        <br> Số CMND/hộ chiếu: 038193008735
+                                        <br> Điện thoại: 0961929681
+                                        <br> Địa chỉ: THANH HÓA - Thanh Hóa
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: ĐOÀN THỊ HƯƠNG
+                                        <br> Ngày sinh: 02-10-1993
+                                        <br> Số CMND/hộ chiếu: 038193008735
+                                        <br> Điện thoại: 0961929681
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Cathay
+                                        <br> Số HD: B11000037322
+                                        <br> Mã YCBH: .01M001515757
+                                        <br> CTV: NGUYỄN THỊ BẢY </td>
+                
+                                    <td>Ngày nộp: 20-01-2020
+                                        <br> Ngày chuyển: 20-01-2020
+                                        <br> Ngày hiệu lực: 31-01-2020
+                                        <br> Ngày phát hành: 31-01-2020
+                                        <br> Ngày ACK: 05-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 4,000,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>19</td>
+                                    <td>
+                                        Họ tên: Nguyễn thị lệ Thủy
+                                        <br> Ngày sinh: 12-09-1980
+                                        <br> Số CMND/hộ chiếu: 240675222
+                                        <br> Điện thoại: 0984305932
+                                        <br> Địa chỉ: 66 Hải Thượng Lãn Ông phường thiện an thị xã buôn hồ tỉnh Đắk Lắk - Đắk Lắk
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ LỆ THỦY
+                                        <br> Ngày sinh: 12-09-1980
+                                        <br> Số CMND/hộ chiếu: 240675222
+                                        <br> Điện thoại: 0984305932
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002050003
+                                        <br> CTV: Nguyễn thị lệ Thủy </td>
+                
+                                    <td>Ngày nộp: 05-02-2020
+                                        <br> Ngày chuyển: 06-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,100,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>20</td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ MAI HƯƠNG
+                                        <br> Ngày sinh: 02-01-1983
+                                        <br> Số CMND/hộ chiếu: 013698270
+                                        <br> Điện thoại: 0965466836
+                                        <br> Địa chỉ: HÀ NỘI - Hà Nội
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYÊN VĂN HÙNG
+                                        <br> Ngày sinh: 18-11-2002
+                                        <br> Số CMND/hộ chiếu: 139
+                                        <br> Điện thoại: 0965466836
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Cathay
+                                        <br> Số HD: B11000037306
+                                        <br> Mã YCBH: .01M001510910
+                                        <br> CTV: NGUYỄN THỊ OANH </td>
+                
+                                    <td>Ngày nộp: 17-01-2020
+                                        <br> Ngày chuyển: 17-01-2020
+                                        <br> Ngày hiệu lực: 31-01-2020
+                                        <br> Ngày phát hành: 31-01-2020
+                                        <br> Ngày ACK: 05-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,960,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>21</td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ MAI HƯƠNG
+                                        <br> Ngày sinh: 02-01-1983
+                                        <br> Số CMND/hộ chiếu: 013698270
+                                        <br> Điện thoại: 0965466836
+                                        <br> Địa chỉ: HÀ NỘI - Hà Nội
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN MẠNH CƯỜNG
+                                        <br> Ngày sinh: 23-03-2009
+                                        <br> Số CMND/hộ chiếu: 66
+                                        <br> Điện thoại: 0965466836
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Cathay
+                                        <br> Số HD: B11000037315
+                                        <br> Mã YCBH: .01M001510954
+                                        <br> CTV: NGUYỄN VĂN ĐIỆN </td>
+                
+                                    <td>Ngày nộp: 17-01-2020
+                                        <br> Ngày chuyển: 17-01-2020
+                                        <br> Ngày hiệu lực: 31-01-2020
+                                        <br> Ngày phát hành: 31-01-2020
+                                        <br> Ngày ACK: 05-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 4,000,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>22</td>
+                                    <td>
+                                        Họ tên: TRẦN ĐỨC BÌNH
+                                        <br> Ngày sinh: 04-09-1972
+                                        <br> Số CMND/hộ chiếu: 036072003686
+                                        <br> Điện thoại: 0977404082
+                                        <br> Địa chỉ: Số nhà 93 đường Nguyễn Viết Xuân, Phủ Lý - Hà Nam
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: TRẦN ĐỨC BÌNH
+                                        <br> Ngày sinh: 04-09-1972
+                                        <br> Số CMND/hộ chiếu: 036072003686
+                                        <br> Điện thoại: 0977404082
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002040009
+                                        <br> CTV: CÔNG TY </td>
+                
+                                    <td>Ngày nộp: 05-02-2020
+                                        <br> Ngày chuyển: 05-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 4,200,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>23</td>
+                                    <td>
+                                        Họ tên: Đoàn Thanh Hải
+                                        <br> Ngày sinh: 01-09-1978
+                                        <br> Số CMND/hộ chiếu: 171658689
+                                        <br> Điện thoại: 0966928499
+                                        <br> Địa chỉ: Làng cẩm bào, xã vạn hoà nông cống thanh hoá - Thanh Hóa
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: ĐOÀN THANH HẢI
+                                        <br> Ngày sinh: 01-09-1978
+                                        <br> Số CMND/hộ chiếu: 171658689
+                                        <br> Điện thoại: 0389313747
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 233742
+                                        <br> Mã YCBH: 1912300015
+                                        <br> CTV: Đoàn Thanh Hải </td>
+                
+                                    <td>Ngày nộp: 30-12-2019
+                                        <br> Ngày chuyển: 30-12-2019
+                                        <br> Ngày hiệu lực: 14-01-2020
+                                        <br> Ngày phát hành: 14-01-2020
+                                        <br> Ngày ACK: 20-01-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 6,343,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>24</td>
+                                    <td>
+                                        Họ tên: Đàm Mai Hương
+                                        <br> Ngày sinh: 18-11-1985
+                                        <br> Số CMND/hộ chiếu: 091057250
+                                        <br> Điện thoại: 0385992785
+                                        <br> Địa chỉ: Phường Phú Xá, thành phố Thái Nguyên - Thái Nguyên
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: ĐÀM MAI HƯƠNG
+                                        <br> Ngày sinh: 18-11-1985
+                                        <br> Số CMND/hộ chiếu: 091057250
+                                        <br> Điện thoại: 0385992785
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 238116
+                                        <br> Mã YCBH: 2002040011
+                                        <br> CTV: Đàm Mai Hương </td>
+                
+                                    <td>Ngày nộp: 04-02-2020
+                                        <br> Ngày chuyển: 04-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,000,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>25</td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ MINH NGUYỆT
+                                        <br> Ngày sinh: 18-09-1988
+                                        <br> Số CMND/hộ chiếu: 205494599
+                                        <br> Điện thoại: 0935629979
+                                        <br> Địa chỉ: , - TP HCM
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: PHAN MỸ CÁT TIÊN
+                                        <br> Ngày sinh: 06-06-2017
+                                        <br> Số CMND/hộ chiếu: 0175DNA250417
+                                        <br> Điện thoại: 0935629979
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Cathay
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 01M001460486
+                                        <br> CTV: CÔNG TY </td>
+                
+                                    <td>Ngày nộp: 09-04-2020
+                                        <br> Ngày chuyển:
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,120,000đ
+                
+                                    </td>
+                                    <td>Đang xử lý</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>26</td>
+                                    <td>
+                                        Họ tên: NGUYỄN KIM PHƯỢNG
+                                        <br> Ngày sinh: 01-01-1963
+                                        <br> Số CMND/hộ chiếu: 280549180
+                                        <br> Điện thoại: 0364826084
+                                        <br> Địa chỉ: 556 Nguyễn Chí Thanh, Hiệp An, Thủ Dầu Một, Bình Dương - Bình Dương
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: LÊ MINH TÀI
+                                        <br> Ngày sinh: 09-01-2004
+                                        <br> Số CMND/hộ chiếu: 20
+                                        <br> Điện thoại: 0364826084
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2001180011
+                                        <br> CTV: </td>
+                
+                                    <td>Ngày nộp: 20-01-2020
+                                        <br> Ngày chuyển:
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 4,290,000đ
+                
+                                    </td>
+                                    <td>Đang xử lý</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>27</td>
+                                    <td>
+                                        Họ tên: Nguyễn Thị Ánh Nhung
+                                        <br> Ngày sinh: 24-08-1994
+                                        <br> Số CMND/hộ chiếu: 251000178
+                                        <br> Điện thoại: 0931264389
+                                        <br> Địa chỉ: 181 Cao Thắng , Phường 12, quận 10 - TP HCM
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ ÁNH NHUNG
+                                        <br> Ngày sinh: 24-08-1994
+                                        <br> Số CMND/hộ chiếu: 251000178
+                                        <br> Điện thoại: 0931264389
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2001180017
+                                        <br> CTV: Nguyễn Thị Ánh Nhung </td>
+                
+                                    <td>Ngày nộp: 18-01-2020
+                                        <br> Ngày chuyển: 18-01-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,800,000đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>28</td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ HỒNG CAM
+                                        <br> Ngày sinh: 01-01-1970
+                                        <br> Số CMND/hộ chiếu: 301534018
+                                        <br> Điện thoại: 0969001253
+                                        <br> Địa chỉ: 25/33 Đường 279, Khu phố 6 , Phước Long , Quận 9, Hồ Chí Minh - TP HCM
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ HỒNG CAM
+                                        <br> Ngày sinh: 10-05-1994
+                                        <br> Số CMND/hộ chiếu: 301534018
+                                        <br> Điện thoại: 0969001253
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2001210015
+                                        <br> CTV: Nguyễn Thị Hồng Cam </td>
+                
+                                    <td>Ngày nộp: 21-01-2020
+                                        <br> Ngày chuyển: 21-01-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,800,000đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>29</td>
+                                    <td>
+                                        Họ tên: Đào Xuân Hợi
+                                        <br> Ngày sinh: 05-05-1971
+                                        <br> Số CMND/hộ chiếu: 038071002169
+                                        <br> Điện thoại: 0972143014
+                                        <br> Địa chỉ: Nông cống thành hoá - Thanh Hóa
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: ĐÀO XUÂN HỢI
+                                        <br> Ngày sinh: 05-05-1971
+                                        <br> Số CMND/hộ chiếu: 038071002169
+                                        <br> Điện thoại: 0972143014
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 234463
+                                        <br> Mã YCBH: .2001030010
+                                        <br> CTV: Đào Xuân Hợi </td>
+                
+                                    <td>Ngày nộp: 03-01-2020
+                                        <br> Ngày chuyển: 03-01-2020
+                                        <br> Ngày hiệu lực: 17-01-2020
+                                        <br> Ngày phát hành: 17-01-2020
+                                        <br> Ngày ACK: 04-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,056,000đ
+                
+                                    </td>
+                                    <td>Hệ thống đã xác nhận</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>30</td>
+                                    <td>
+                                        Họ tên: LÂM THỊ TRÚC LINH
+                                        <br> Ngày sinh: 27-08-1989
+                                        <br> Số CMND/hộ chiếu: 321290171
+                                        <br> Điện thoại: 0932951125
+                                        <br> Địa chỉ: A1 số nhà 50, Tân Thuận Bình, Chợ Gạo, Tiền Giang - Hà Nội
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: LÂM THỊ TRÚC LINH
+                                        <br> Ngày sinh: 27-08-1989
+                                        <br> Số CMND/hộ chiếu: 321290171
+                                        <br> Điện thoại: 0932951125
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD: 236342.1
+                                        <br> Mã YCBH: 2001150011
+                                        <br> CTV: CÔNG TY </td>
+                
+                                    <td>Ngày nộp: 15-01-2020
+                                        <br> Ngày chuyển: 17-01-2020
+                                        <br> Ngày hiệu lực: 15-01-2020
+                                        <br> Ngày phát hành: 17-01-2020
+                                        <br> Ngày ACK: 03-02-2020
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,060,000đ
+                
+                                    </td>
+                                    <td>Đã xác nhận ngày bàn giao</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>31</td>
+                                    <td>
+                                        Họ tên: Lê Thúy Nga
+                                        <br> Ngày sinh: 01-01-1971
+                                        <br> Số CMND/hộ chiếu: 024389086
+                                        <br> Điện thoại: 0966504469
+                                        <br> Địa chỉ: 44 Quang Trung, P.10, Quận Gò Vấp - TP HCM
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: LÊ THÚY NGA
+                                        <br> Ngày sinh: 01-01-1971
+                                        <br> Số CMND/hộ chiếu: 024389086
+                                        <br> Điện thoại: 0966504469
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002030008
+                                        <br> CTV: Lê Thúy Nga </td>
+                
+                                    <td>Ngày nộp: 03-02-2020
+                                        <br> Ngày chuyển: 04-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 17,690,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>32</td>
+                                    <td>
+                                        Họ tên: Luyện Thị Hạnh
+                                        <br> Ngày sinh: 01-01-1988
+                                        <br> Số CMND/hộ chiếu: 272795661
+                                        <br> Điện thoại: 0976513948
+                                        <br> Địa chỉ: 40/199A, KP3, Tân Mai, Biên Hoà, Đồng Nai - Đồng Nai
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: LUYỆN THỊ HẠNH
+                                        <br> Ngày sinh: 01-01-1988
+                                        <br> Số CMND/hộ chiếu: 272795661
+                                        <br> Điện thoại: 0976513948
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002030006
+                                        <br> CTV: Luyện Thị Hạnh </td>
+                
+                                    <td>Ngày nộp: 03-02-2020
+                                        <br> Ngày chuyển:
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,857,000đ
+                
+                                    </td>
+                                    <td>Đang xử lý</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>33</td>
+                                    <td>
+                                        Họ tên: TẠ THỊ PHONG
+                                        <br> Ngày sinh: 25-03-1975
+                                        <br> Số CMND/hộ chiếu: 241323947
+                                        <br> Điện thoại: 0387911363
+                                        <br> Địa chỉ: 105 Đội 1, Buôn Eana, Krông Ana, Đăl Lak - Đắk Lắk
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN VĂN THO
+                                        <br> Ngày sinh: 26-06-1974
+                                        <br> Số CMND/hộ chiếu: 241261613
+                                        <br> Điện thoại: 0387911363
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002030001
+                                        <br> CTV: Nguyễn Văn Tho </td>
+                
+                                    <td>Ngày nộp: 03-02-2020
+                                        <br> Ngày chuyển: 04-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 6,597,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>34</td>
+                                    <td>
+                                        Họ tên: ĐỖ THỊ QUYẾT
+                                        <br> Ngày sinh: 10-10-1978
+                                        <br> Số CMND/hộ chiếu: 026178002250
+                                        <br> Điện thoại: 0966422134
+                                        <br> Địa chỉ: ẤP CÂY ĐA, TỔ 4A, XÃ TÂN PHÚ TRUNG, CỦ CHI, HỒ CHÍ MINH - TP HCM
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: ĐỖ THỊ QUYẾT
+                                        <br> Ngày sinh: 10-10-1978
+                                        <br> Số CMND/hộ chiếu: 026178002250
+                                        <br> Điện thoại: 0966422134
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2001290004
+                                        <br> CTV: Võ Thị Mai Phương </td>
+                
+                                    <td>Ngày nộp: 30-01-2020
+                                        <br> Ngày chuyển: 04-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 4,055,000đ
+                
+                                    </td>
+                                    <td>Chuyển đối tác thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>35</td>
+                                    <td>
+                                        Họ tên: CÁI THỊ MỸ LÀNH
+                                        <br> Ngày sinh: 25-05-1992
+                                        <br> Số CMND/hộ chiếu: 197271003
+                                        <br> Điện thoại: 0823797456
+                                        <br> Địa chỉ: An bình dĩ an bình dương - Bình Dương
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: CÁI THỊ MỸ LÀNH
+                                        <br> Ngày sinh: 25-05-1992
+                                        <br> Số CMND/hộ chiếu: 197271003
+                                        <br> Điện thoại: 0823797456
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002010003
+                                        <br> CTV: CÁI THỊ MỸ LÀNH </td>
+                
+                                    <td>Ngày nộp: 01-02-2020
+                                        <br> Ngày chuyển: 01-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,850,000đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>36</td>
+                                    <td>
+                                        Họ tên: TRẦN THỊ PHƯỢNG UYÊN
+                                        <br> Ngày sinh: 12-05-1980
+                                        <br> Số CMND/hộ chiếu: 250430114
+                                        <br> Điện thoại: 0977730734
+                                        <br> Địa chỉ: 4/16 HẺM 2 NGUYỄN LƯƠNG BẰNG, LỘC THANH - Lâm Đồng
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: TRẦN THỊ PHƯỢNG UYÊN
+                                        <br> Ngày sinh: 12-05-1980
+                                        <br> Số CMND/hộ chiếu: 250430114
+                                        <br> Điện thoại: 0977730734
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: .2001210001
+                                        <br> CTV: TRẦN THỊ PHƯỢNG UYÊN </td>
+                
+                                    <td>Ngày nộp: 18-01-2020
+                                        <br> Ngày chuyển: 18-01-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 3,995,000đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>37</td>
+                                    <td>
+                                        Họ tên: LÊ ANH DŨNG
+                                        <br> Ngày sinh: 12-04-1960
+                                        <br> Số CMND/hộ chiếu: 168578311
+                                        <br> Điện thoại: 0936334424
+                                        <br> Địa chỉ: THÔN NGÔ YẾN, AN HỒNG, AN DƯƠNG - Hải Phòng
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: LÊ THU THỦY
+                                        <br> Ngày sinh: 25-11-2003
+                                        <br> Số CMND/hộ chiếu: 031303004042
+                                        <br> Điện thoại: 0936334424
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2001090018
+                                        <br> CTV: CÔNG TY </td>
+                
+                                    <td>Ngày nộp: 30-01-2020
+                                        <br> Ngày chuyển: 30-01-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 5,001,000đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>38</td>
+                                    <td>
+                                        Họ tên: Dinh Thi Ngoc Oanh
+                                        <br> Ngày sinh: 26-09-1984
+                                        <br> Số CMND/hộ chiếu: 035184002349
+                                        <br> Điện thoại: 0912599977
+                                        <br> Địa chỉ: P705 so 69 ngo 5 Truong Chinh, Phuong Liet, Thanh Xuan, Ha Noi - Hà Nội
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: ĐINH THỊ NGỌC OANH
+                                        <br> Ngày sinh: 26-09-1984
+                                        <br> Số CMND/hộ chiếu: 035184002349
+                                        <br> Điện thoại: 0912599977
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002020002
+                                        <br> CTV: Dinh Thi Ngoc Oanh </td>
+                
+                                    <td>Ngày nộp: 02-02-2020
+                                        <br> Ngày chuyển: 02-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 7,385,000đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>39</td>
+                                    <td>
+                                        Họ tên: Nguyễn thị vẹn
+                                        <br> Ngày sinh: 06-12-1973
+                                        <br> Số CMND/hộ chiếu: 230429416
+                                        <br> Điện thoại: 033 4561799
+                                        <br> Địa chỉ: 41 Tôn Thất Tùng, thị trấn KBang, huyện Kbang, tỉnh Gia Lai - Gia Lai
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: NGUYỄN THỊ VẸN
+                                        <br> Ngày sinh: 06-12-1973
+                                        <br> Số CMND/hộ chiếu: 230429416
+                                        <br> Điện thoại: 0334561799
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002020003
+                                        <br> CTV: Nguyễn thị vẹn </td>
+                
+                                    <td>Ngày nộp: 02-02-2020
+                                        <br> Ngày chuyển: 02-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 8,849,100đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                                <tr class="odd">
+                                    <td>40</td>
+                                    <td>
+                                        Họ tên: ĐẶNG HỮU TRÍ
+                                        <br> Ngày sinh: 06-10-1971
+                                        <br> Số CMND/hộ chiếu: 230896673
+                                        <br> Điện thoại: 0385775456
+                                        <br> Địa chỉ: 41 Tôn Thất Tùng, thị trấn KBang, huyện KBang, tỉnh Gia Lai - Gia Lai
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Họ tên: ĐẶNG NHƯ NGỌC
+                                        <br> Ngày sinh: 08-09-1997
+                                        <br> Số CMND/hộ chiếu: 231094648
+                                        <br> Điện thoại: 0868957607
+                                        <br>
+                                    </td>
+                                    <td>
+                                        Tên đối tác: Fubon
+                                        <br> Số HD:
+                                        <br> Mã YCBH: 2002020004
+                                        <br> CTV: ĐẶNG HỮU TRÍ </td>
+                
+                                    <td>Ngày nộp: 02-02-2020
+                                        <br> Ngày chuyển: 02-02-2020
+                                        <br> Ngày hiệu lực:
+                                        <br> Ngày phát hành:
+                                        <br> Ngày ACK:
+                
+                                    </td>
+                
+                                    <td>
+                                        Sản phẩm chính:
+                                        <br> Sản phẩm phụ:
+                                        <br> Tổng tiền: 2,767,000đ
+                
+                                    </td>
+                                    <td>HĐ gửi quá 3 ngày thẩm định</td>
+                
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="text-center">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="/contract/khachhang?&amp;p=1"><span>Đầu</span></a></li>
+                                <li class="page-item"><a class="page-link" href="/contract/khachhang?&amp;p=1"><span>«</span></a></li>
+                                <li class="page-item page-1"><a class="page-link current" href="/contract/khachhang?&amp;p=1">1</a></li>
+                                <li class="page-item page-2"><a class="page-link " href="/contract/khachhang?&amp;p=2">2</a></li>
+                                <li class="page-item page-3"><a class="page-link " href="/contract/khachhang?&amp;p=3">3</a></li>
+                                <li class="page-item page-4"><a class="page-link " href="/contract/khachhang?&amp;p=4">4</a></li>
+                                <li class="page-item"><a class="page-link" href="/contract/khachhang?&amp;p=2"><span>»</span></a></li>
+                                <li class="page-item"><a class="page-link" href="/contract/khachhang?&amp;p=12"><span>Cuối</span></a></li>
+                            </ul>
+                        </div>
+                
+                    </div>
+                </div>
+                </div>
+            <!-- /.box-body -->
+          </div>
+          </div>
+          </div>
+          <!-- /.box -->
+    {% endblock %}
+
+<!-- jQuery 3 -->
+
+
+
+
+
+   {% block jsblock %}
+       <script src="{% static 'dashboard/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'dashboard/bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'dashboard/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Morris.js charts -->
+<script src="{% static 'dashboard/bower_components/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'dashboard/bower_components/morris.js/morris.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'dashboard/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+<!-- jvectormap -->
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'dashboard/bower_components/jquery-knob/dist/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'dashboard/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'dashboard/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- datepicker -->
+<script src="{% static 'dashboard/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'dashboard/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'dashboard/bower_components/fastclick/lib/fastclick.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dashboard/dist/js/adminlte.min.js' %}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dashboard/dist/js/demo.js' %}"></script>
+
+
+       <!-- FLOT CHARTS -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.js' %}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.resize.js' %}"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.pie.js' %}"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.categories.js' %}"></script>
+<!-- ChartJS -->
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+{#<script src="{% static 'dashboard/bower_components/chart.js/Chart.js' %}"></script>#}
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+
+
+<script src="{% static 'dashboard/myscript/horizontal.js' %}"></script>
+     <script>
+
+
+       </script>
+
+        {% endblock %}
+
+
+
+

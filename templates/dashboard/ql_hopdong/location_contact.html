@@ -1,0 +1,194 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    {% block cssblock %}
+    <link rel="stylesheet" href="{% static 'dashboard/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/Ionicons/css/ionicons.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/AdminLTE.min.css' %}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/skins/_all-skins.min.css' %}">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/morris.js/morris.css' %}">
+  <!-- jvectormap -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/jvectormap/jquery-jvectormap.css' %}">
+  <!-- Date Picker -->
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/bootstrap-daterangepicker/daterangepicker.css' %}">
+  <!-- bootstrap wysihtml5 - text editor -->
+  <link rel="stylesheet" href="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
+        {% endblock %}
+
+
+    {% block content %}
+    <div class="box ">
+<div class="row">
+  <div class="col-sm-12">
+    <div class="box-header bg-green">
+      <h3 class="box-title">Danh hiệu</h3>
+  </div><br>
+    <div class="col-sm-6 form-group">
+      <label>Cấp bậc của tài khoản</label>
+      <select name="level" id="" class="form-control">
+          <option value="">Chọn cấp bậc</option>
+                                                  <option value="1">Cộng tác viên</option>
+                                                  <option value="2">Chuyên viên kinh doanh</option>
+                                                  <option value="3">Trưởng nhóm</option>
+                                                  <option value="4">Phó phòng KD</option>
+                                                  <option value="5">Trưởng phòng KD</option>
+                                                  <option value="6">Phó Giám Đốc</option>
+                                                  <option value="7">Giám Đốc</option>
+                                                  <option value="8">Giám Đốc Khu Vực</option>
+                                                  <option value="9">Giám Đốc Miền</option>
+                                                  <option value="10">Bàn Tròn Triệu Phú</option>
+                                          </select>
+  </div>
+  <div class="col-sm-6 form-group">
+    <label>Tên đăng nhập</label>
+    <div class="input-group input-group-sm">
+      <input type="text" class="form-control">
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-info btn-warning">Tìm Kiếm</button>
+          </span>
+    </div>
+  </div>
+  </div>
+
+
+  <div class="col-sm-12">
+
+  <h4>Tổng số tài khoản: 6307</h4>
+
+      <div class="box-body table-responsive no-padding">
+        <table class="table table-hover">
+          <tbody>
+            <tr>
+            <th>STT</th>
+            <th>Thông tin</th>
+            <th>Cấp bậc</th>
+            <th>Số dư</th>
+          </tr>
+          <tr>
+            <td>
+              47019
+            </td>
+            <td>
+              <div><span class="text-danger bold">Đào Hải Bình</span> <span class="text-info">(binhds2019@gmail.com)</span></div>
+              <div>Họ tên: Đào Hải Bình</div>
+              <div>Ngày tạo: 02-06-2020 12:05:58</div>
+              <div>Lần đăng nhập cuối: 02-06-2020 12:08:24</div>
+              <div>Người giới thiệu: tranthiminhhue (hueminh81@yahoo.com)</div>
+              <div>Người đỡ đầu:  ()</div>
+
+          </td>
+          <td>
+            Thành viên
+        </td>
+            <td>BV</td>
+            
+          </tr>
+          <tr>
+            <td>
+              47018
+            </td>
+            <td>
+              <div><span class="text-danger bold">thientran7782</span> <span class="text-info">(tranthien7782@gmail.com)</span></div>
+              <div>Họ tên: Trần Hoàng Thiên</div>
+              <div>Ngày tạo: 02-06-2020 09:27:06</div>
+              <div>Lần đăng nhập cuối: 01-01-1970 08:00:00</div>
+              <div>Người giới thiệu: VANHOAN84 (tranhoanln@gmail.com)</div>
+              <div>Người đỡ đầu:  ()</div>
+          </td>
+          <td>
+            Thành viên
+        </td>
+            <td>BV</td>
+            
+          </tr>
+        </tbody>
+        
+      </table>
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
+<!-- /.col -->
+</div>
+    {% endblock %}
+
+<!-- jQuery 3 -->
+
+
+
+
+
+   {% block jsblock %}
+       <script src="{% static 'dashboard/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'dashboard/bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'dashboard/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Morris.js charts -->
+<script src="{% static 'dashboard/bower_components/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'dashboard/bower_components/morris.js/morris.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'dashboard/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+<!-- jvectormap -->
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+<!-- jQuery Knob Chart -->
+<script src="{% static 'dashboard/bower_components/jquery-knob/dist/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'dashboard/bower_components/moment/min/moment.min.js' %}"></script>
+<script src="{% static 'dashboard/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
+<!-- datepicker -->
+<script src="{% static 'dashboard/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'dashboard/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'dashboard/bower_components/fastclick/lib/fastclick.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dashboard/dist/js/adminlte.min.js' %}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dashboard/dist/js/demo.js' %}"></script>
+
+
+       <!-- FLOT CHARTS -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.js' %}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.resize.js' %}"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.pie.js' %}"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.categories.js' %}"></script>
+<!-- ChartJS -->
+
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+{#<script src="{% static 'dashboard/bower_components/chart.js/Chart.js' %}"></script>#}
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}"></script>
+<script src="{% static 'dashboard/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}"></script>
+
+
+<script src="{% static 'dashboard/myscript/horizontal.js' %}"></script>
+     <script>
+
+
+       </script>
+
+        {% endblock %}
+
+
+
+

@@ -1,0 +1,212 @@
+{% extends 'dashboard/base.html' %}
+{% load static %}
+
+    {% block cssblock %}
+    <link rel="stylesheet" href="{% static 'dashboard/bower_components/bootstrap/dist/css/bootstrap.min.css' %}">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/font-awesome/css/font-awesome.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/Ionicons/css/ionicons.min.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/AdminLTE.min.css' %}">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="{% static 'dashboard/dist/css/skins/_all-skins.min.css' %}">
+  <!-- Morris chart -->
+  <link rel="stylesheet" href="{% static 'dashboard/bower_components/morris.js/morris.css' %}">
+<style>
+  .aa{
+    color:#f39c12;
+  }
+  th{
+    color:#3c8dbc;
+  }
+</style>
+
+        {% endblock %}
+  {% block content %}
+  <div class="box ">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="box-header bg-orange">
+        <h3 class="box-title">Hợp đồng tạm tính</h3>
+    </div><br>
+    <div class="col-sm-3">
+        <label>Ngày tháng</label>
+        <input type="text" name="daterange" id="daterange" placeholder="Date" class="form-control">
+    </div>
+    <div class="col-sm-3">
+        <label>Trạng thái</label>
+        <select name="status" id="" class="form-control">
+            <option value="-1" selected="">Chọn trạng thái</option>
+            <option value="0">Bị hủy</option>
+            <option value="1">Đã trả</option>
+            <option value="2">Chờ thanh toán</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <label>Loại thưởng</label>
+        <select name="verb" id="" class="form-control">
+            <option value="">Chọn hành động</option>
+            <option value="user_package_private">Thưởng DS Bán Lẻ</option>
+            <option value="user_package">Thưởng tuyển dụng</option>
+        </select>
+    </div>
+    <div class="col-sm-3">
+        <label>Username</label>
+        <div class="input-group input-group-sm">
+          <input type="text" class="form-control">
+              <span class="input-group-btn">
+                <button type="button" class="btn btn-info btn-warning">Search</button>
+              </span>
+        </div>
+    </div>
+  </div>
+<br/>
+ 
+    <div class="col-md-12">
+     
+        <!-- /.box-header -->
+        <div class="box-body">
+          <table class="table table-bordered">
+            <tbody>
+              <tr>
+                <th>STT</th>
+                <th>Từ tài khoản</th>
+                <th>Cho tài khoản</th>
+                <th>TT Ngày</th>
+                <th>Điểm</th>
+                <th>Loại hành động</th>
+                <th>Trạng thái</th>
+            </tr>
+            <tr>
+              <td>6172</td>
+              <td>
+                <div>Lieu@2020</div>
+                <div>Email: tranthanhkiet2005@gmail.com</div>
+              </td>
+              <td>
+                <div>Tuy2019</div>
+                <div>Email: nguyentuy1005@gmail.com</div>
+            </td>
+            <td>
+              <div>Ngày tạo: 06-02-2020 09:51:56</div>
+              <div>Ngày tính: 27-02-2020 09:51</div>
+          </td>
+          <td>
+            <div>Thưởng Tuyển Dụng</div>
+            <div>Gói: 1507</div>
+        </td>
+        <td>17.4 BV</td>
+  
+              <td class="aa">Chờ thanh toán</td>
+             </tr>
+             <tr>
+              <td>6173</td>
+              <td>
+                <div>Lieu@2020</div>
+                <div>Email: tranthanhkiet2005@gmail.com</div>
+              </td>
+              <td>
+                <div>Phuong2019</div>
+                <div>Email: pl065568@gmail.com</div>
+            </td>
+            <td>
+              <div>Ngày tạo: 06-02-2020 09:51:56</div>
+              <div>Ngày tính: 27-02-2020 09:51</div>
+          </td>
+          <td>
+            <div>Thưởng Tuyển Dụng</div>
+            <div>Gói: 1507</div>
+        </td>
+        <td>3.48 BV</td>
+  
+              <td class="aa">Chờ thanh toán</td>
+             </tr>
+          </tbody>
+        </table>
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer clearfix">
+          <ul class="pagination pagination-sm no-margin pull-right">
+            <li><a href="#">«</a></li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">»</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+          <!-- /.box -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {% endblock %}
+
+
+
+   {% block jsblock %}
+       <script src="{% static 'dashboard/bower_components/jquery/dist/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'dashboard/bower_components/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+  $.widget.bridge('uibutton', $.ui.button);
+</script>
+<!-- Bootstrap 3.3.7 -->
+<script src="{% static 'dashboard/bower_components/bootstrap/dist/js/bootstrap.min.js' %}"></script>
+<!-- Morris.js charts -->
+<script src="{% static 'dashboard/bower_components/raphael/raphael.min.js' %}"></script>
+<script src="{% static 'dashboard/bower_components/morris.js/morris.min.js' %}"></script>
+<!-- Sparkline -->
+<script src="{% static 'dashboard/bower_components/jquery-sparkline/dist/jquery.sparkline.min.js' %}"></script>
+
+<!-- jQuery Knob Chart -->
+<script src="{% static 'dashboard/bower_components/jquery-knob/dist/jquery.knob.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'dashboard/bower_components/moment/min/moment.min.js' %}"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
+<!-- Slimscroll -->
+<script src="{% static 'dashboard/bower_components/jquery-slimscroll/jquery.slimscroll.min.js' %}"></script>
+<!-- FastClick -->
+<script src="{% static 'dashboard/bower_components/fastclick/lib/fastclick.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dashboard/dist/js/adminlte.min.js' %}"></script>
+
+<!-- AdminLTE for demo purposes -->
+<script src="{% static 'dashboard/dist/js/demo.js' %}"></script>
+
+
+       <!-- FLOT CHARTS -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.js' %}"></script>
+<!-- FLOT RESIZE PLUGIN - allows the chart to redraw when the window is resized -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.resize.js' %}"></script>
+<!-- FLOT PIE PLUGIN - also used to draw donut charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.pie.js' %}"></script>
+<!-- FLOT CATEGORIES PLUGIN - Used to draw bar charts -->
+<script src="{% static 'dashboard/bower_components/Flot/jquery.flot.categories.js' %}"></script>
+<!-- ChartJS -->
+<script src="{% static 'dashboard/bower_components/chart.js/Chart.js' %}"></script>
+
+
+<script src="{% static 'dashboard/myscript/interactive.js' %}"></script>
+<script src="{% static 'dashboard/myscript/barchar1.js' %}"></script>
+
+
+        {% endblock %}
