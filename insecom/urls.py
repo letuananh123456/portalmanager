@@ -40,8 +40,10 @@ urlpatterns = [
     # path('api/update-sup-product/', api_view.UpdateSupProductStatisticSuccess.as_view()),
     # path('api/update-favorite-product/', api_view.UpdateFavoriteProductSuccess.as_view()),
     
-    
+    path('admin/', admin.site.urls),
     path('api/update-contract/',contract_view.UpdateContractApi.as_view()),
     path('api/update-user/',user_view.UpdateInfoUserApi.as_view()),
+    path('api-order-user-success/',user_view.InfoOrderUserApi.as_view(), name='order_user_success'),
+
 
 ]
