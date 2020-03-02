@@ -43,7 +43,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/update-contract/',contract_view.UpdateContractApi.as_view()),
     path('api/update-user/',user_view.UpdateInfoUserApi.as_view()),
-    path('api-order-user-success/',user_view.InfoOrderUserApi.as_view(), name='order_user_success'),
+    path('api-order-home-success/',contract_view.InfoOrderHomeUserApi.as_view(), name='order_user_success'),
+    path('api-user-success/',user_view.UpdateInfoUserApi.as_view(), name='user_success'),
 
 
 ]
