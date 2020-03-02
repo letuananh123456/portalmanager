@@ -3,7 +3,7 @@ from apps.users.models import LoginHistory
 import math
 import requests
 from django.conf import settings
-from apps.users.models import UpdateUser
+# from apps.users.models import UpdateUser
 
 
 def create_or_update_login_history(user_id):
@@ -23,15 +23,15 @@ def create_or_update_login_history(user_id):
         LoginHistory.objects.create(user_id=user_id)
 
 
-def order_info_api(user_id):
-    data = UpdateUser.objects.get(user_id=user_id)
-    url= settings.PORTAL_BIHAMA_RETURN_URL+"api/update-user/"
-    json_data={
-        'user_id':data.user.id,
-        'fullname':data.fullname,
-        'phone':data.phone,
-        'email' : email,
-        'password' : password
-    }
-    r = requests.post(url, json=json_data)
-    return r.status_code
+# def order_info_api(user_id):
+#     data = UpdateUser.objects.get(user_id=user_id)
+#     url= settings.PORTAL_BIHAMA_RETURN_URL+"api/update-user/"
+#     json_data={
+#         'user_id':data.user.id,
+#         'fullname':data.fullname,
+#         'phone':data.phone,
+#         'email' : email,
+#         'password' : password
+#     }
+#     r = requests.post(url, json=json_data)
+#     return r.status_code

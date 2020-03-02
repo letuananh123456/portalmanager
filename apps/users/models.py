@@ -4,6 +4,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils.translation import gettext_lazy as _
 # Create your models here.
+from django.contrib.auth.models import AbstractUser
 
 TOKEN_LENGTH = 64
 RESET_TOKEN_LENGTH = 10
@@ -117,10 +118,14 @@ class UserNotification(models.Model):
         ordering = ['-created_at']
 
 
-class UpdateUser(models.Model):
+class User(models.Model):
+
     user_id = models.CharField(max_length=200)
     username = models.CharField(max_length=200)
     fullname = models.CharField(max_length=200)
-    phone = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    password = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200, null=True)
+    email = models.CharField(max_length=200, null=True)
+    password = models.CharField(max_length=200, null=True)
+
+    def __str__(self):
+        return self.username
