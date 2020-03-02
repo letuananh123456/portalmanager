@@ -84,16 +84,18 @@
                       </thead>
           
                       <tbody role="alert" aria-live="polite" aria-relevant="all">
+
+                        {% for item in listdata %}
                           <tr class="odd">
                               <td>1</td>
-                              <td>Nguyễn Thị Kim Tuyến
-                                  <br> SĐT: 0582430725 </td>
-                              <td>1911130007</td>
-                              <td>229818</td>
-                              <td>Fubon</td>
-                              <td>Hệ thống đã xác nhận</td>
+                              <td>{{item.fullname}}
+                                  <br> SĐT: {{item.user}} </td>
+                              <td>{{item.sumit_date}}</td>
+                              <td>{{item.userid_mua}}</td>
+                              <td>{{item.name_product}}</td>
+                              <td>{{item.type_product}}</td>
                              
-                              <td>Nguyễn Thị Kim Tuyến</td>
+                              <td>{{item.company}}</td>
                               <td>
                                   46575 </td>
                               <td>10,369,000đ</td>
@@ -102,132 +104,8 @@
           
                               </td>
                           </tr>
-                          <tr class="odd">
-                              <td>2</td>
-                              <td>Đoàn văn Độ
-                                  <br> SĐT: 0943235199 </td>
-                              <td>1911060006</td>
-                              <td>229460</td>
-                              <td>Fubon</td>
-                              <td>Hệ thống đã xác nhận</td>
-                              
-                              <td>Đoàn văn Độ</td>
-                              <td>
-                                  46575 </td>
-                              <td>16,144,000đ</td>
-                              <td>
-                                  <a href="{% url 'dashboard:addlifecontract' %}">Chi tiết</a>
-          
-                              </td>
-                          </tr>
-                          <tr class="odd">
-                              <td>3</td>
-                              <td>Đoàn văn hoá
-                                  <br> SĐT: 0988032696 </td>
-                              <td>1911210008</td>
-                              <td>230265</td>
-                              <td>Fubon</td>
-                              <td>Hệ thống đã xác nhận</td>
-                             
-                              <td>Đoàn văn hoá</td>
-                              <td>
-                                  46575 </td>
-                              <td>16,773,000đ</td>
-                              <td>
-                                  <a href="{% url 'dashboard:addlifecontract' %}">Chi tiết</a>
-          
-                              </td>
-                          </tr>
-                          <tr class="odd">
-                              <td>4</td>
-                              <td>ĐOÀN THỊ HĂNG
-                                  <br> SĐT: 0966928499 </td>
-                              <td>1911210027</td>
-                              <td></td>
-                              <td>Fubon</td>
-                              <td>Đã xác nhận ngày bàn giao</td>
-                             
-                              <td>Nguyễn thị suốt</td>
-                              <td>
-                                  46575 </td>
-                              <td>18,402,000đ</td>
-                              <td>
-                                  <a href="{% url 'dashboard:addlifecontract' %}">Chi tiết</a>
-          
-                              </td>
-                          </tr>
-                          <tr class="odd">
-                              <td>5</td>
-                              <td>Nguyễn Thị Hậu
-                                  <br> SĐT: 0839288679 </td>
-                              <td>1911150012</td>
-                              <td>229876</td>
-                              <td>Fubon</td>
-                              <td>Hệ thống đã xác nhận</td>
-                            
-                              <td>Nguyễn Thị Hậu</td>
-                              <td>
-                                  46575 </td>
-                              <td>10,647,000đ</td>
-                              <td>
-                                  <a href="{% url 'dashboard:addlifecontract' %}">Chi tiết</a>
-          
-                              </td>
-                          </tr>
-                          <tr class="odd">
-                              <td>6</td>
-                              <td>ĐÀO QUANG SƠN
-                                  <br> SĐT: 0914731666 </td>
-                              <td>1911060005</td>
-                              <td>229478</td>
-                              <td>Fubon</td>
-                              <td>Hệ thống đã xác nhận</td>
-                              
-                              <td>ĐÀO QUANG SƠN</td>
-                              <td>
-                                  46575 </td>
-                              <td>10,526,000đ</td>
-                              <td>
-                                  <a href="{% url 'dashboard:addlifecontract' %}">Chi tiết</a>
-          
-                              </td>
-                          </tr>
-                          <tr class="odd">
-                              <td>7</td>
-                              <td>HOÀNG TRỌNG ANH
-                                  <br> SĐT: 0359909999 </td>
-                              <td>1910300036</td>
-                              <td>228820</td>
-                              <td>Fubon</td>
-                              <td>Hệ thống đã xác nhận</td>
-                             
-                              <td>HOÀNG THỊ THU HÀ</td>
-                              <td>
-                                  46575 </td>
-                              <td>16,607,000đ</td>
-                              <td>
-                                  <a href="{% url 'dashboard:addlifecontract' %}">Chi tiết</a>
-          
-                              </td>
-                          </tr>
-                          <tr class="odd">
-                              <td>8</td>
-                              <td>HỒ SỸ CÔNG
-                                  <br> SĐT: 0942225777 </td>
-                              <td>1910300021</td>
-                              <td>228969</td>
-                              <td>Fubon</td>
-                              <td>Hệ thống đã xác nhận</td>
-                             
-                              <td>HỒ SỸ CÔNG</td>
-                              <td>
-                                  46575 </td>
-                              <td>16,116,000đ</td>
-                              <td>
-                                  <a href="{% url 'dashboard:addlifecontract' %}">Chi tiết</a>
-          
-                              </td>
-                          </tr>
+                          {% endfor %}
+                 
                       </tbody>
                   </table>
                   <div class="text-center">

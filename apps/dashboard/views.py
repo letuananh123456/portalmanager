@@ -4,8 +4,10 @@ from .models import MonthContact, ChannelSuccess, DaySuccess, MonthSuccess
 from .models import ChannelContact, FavoriteBenefit, FavoriteProduct, Favorite_Product_Benefit
 from .models import AgentTotal,DayContact, SupBenefit, SupProduct, Sup_Product_Benefit
 from .models import Channel
+from apps.contract.models import ContractInformation
 from .models import NewAgent, LocationContact, MainBenefit, MainProduct, Main_Product_Benefit
 import numpy as np
+from apps.contract.models import Collaborators
 import json
 from .ultils import *
 class DashboardView(View):
@@ -391,6 +393,68 @@ class AddTrangThaiNhanTho(View):
     def get(self, request):
         return render(request, 'dashboard/add_baohiem/addnhantho.html')
 
+    def post(self, request):
+        buyer = request.POST.get("buyer")
+        buyer_sex = request.POST.get("buyer_sex")
+        buyer_cmnd = request.POST.get("buyer_cmnd")
+        buyer_image = request.POST.get("buyer_image")
+        buyer_birth = request.POST.get("buyer_birth")
+        buyer_phone = request.POST.get("buyer_phone")
+        buyer_email = request.POST.get("buyer_email")
+        receiver = request.POST.get("receiver")
+        receiver_cmnd = request.POST.get("receiver_cmnd")
+        receiver_image = request.POST.get("receiver_image")
+        receiver_birth = request.POST.get("receiver_birth")
+        receiver_sex = request.POST.get("receiver_sex")
+        beneficiary = request.POST.get("beneficiary")
+        beneficiary_cmnd = request.POST.get("beneficiary_cmnd")
+        beneficiary_relationship = request.POST.get("beneficiary_relationship")
+        beneficiary_image = request.POST.get("beneficiary_image")
+        beneficiary_birth = request.POST.get("beneficiary_birth")
+        beneficiary_sex = request.POST.get("beneficiary_sex")
+        presenter_name = request.POST.get("presenter_name")
+        presenter_id = request.POST.get("presenter_id")
+        product_name = request.POST.get("product_name")
+        product_company = request.POST.get("product_company")
+        product_phi = request.POST.get("product_phi")
+        product_year_contract = request.POST.get("product_year_contract")
+        product_year_phi = request.POST.get("product_year_phi")
+        product_frequency_phi = request.POST.get("product_frequency_phi")
+        product_insurance_money = request.POST.get("product_insurance_money")
+        supplementary_product_name = request.POST.get("supplementary_product_name")
+        supplementary_product_company = request.POST.get("supplementary_product_company")
+        supplementary_product_phi = request.POST.get("supplementary_product_phi")
+        supplementary_product_year_contract = request.POST.get("supplementary_product_year_contract")
+        supplementary_product_year_phi = request.POST.get("supplementary_product_year_phi")
+        supplementary_product_frequency_phi = request.POST.get("supplementary_product_frequency_phi")
+        supplementary_product_insurance_money = request.POST.get("supplementary_product_insurance_money")
+        pay_main_product = request.POST.get("pay_main_product")
+        pay_phu_product = request.POST.get("pay_phu_product")
+        pay_total_phi = request.POST.get("pay_total_phi")
+        pay_tax = request.POST.get("pay_tax")
+        total_payment_amount = request.POST.get("total_payment_amount")
+        information_received = request.POST.get("information_received")
+        information_received_name = request.POST.get("information_received_name")
+        information_received_email = request.POST.get("information_received_email")
+        information_received_phone = request.POST.get("information_received_phone")
+        information_received_address = request.POST.get("information_received_address")
+        ContractInformation.objects.create(buyer=buyer,buyer_sex=buyer_sex,buyer_cmnd=buyer_cmnd,buyer_image=buyer_image,
+        buyer_birth=buyer_birth,buyer_phone=buyer_phone,buyer_email=buyer_email,receiver=receiver,
+        receiver_cmnd=receiver_cmnd,receiver_image=receiver_image,receiver_birth=receiver_birth,
+        receiver_sex=receiver_sex,beneficiary=beneficiary,beneficiary_cmnd=beneficiary_cmnd,beneficiary_relationship=beneficiary_relationship,
+        beneficiary_image=beneficiary_image,beneficiary_birth=beneficiary_birth,beneficiary_sex=beneficiary_sex,
+        presenter_name=presenter_name,presenter_id=presenter_id,product_name=product_name,product_company=product_company,
+        product_phi=product_phi,product_year_contract=product_year_contract,product_year_phi=product_year_phi,product_frequency_phi=product_frequency_phi,
+        product_insurance_money=product_insurance_money,supplementary_product_name=supplementary_product_name,supplementary_product_company=supplementary_product_company,
+        supplementary_product_phi=supplementary_product_phi,supplementary_product_year_contract=supplementary_product_year_contract,supplementary_product_year_phi=supplementary_product_year_phi,
+        supplementary_product_frequency_phi=supplementary_product_frequency_phi,supplementary_product_insurance_money=supplementary_product_insurance_money,
+        pay_main_product=pay_main_product,pay_phu_product=pay_phu_product,pay_total_phi=pay_total_phi,pay_tax=pay_tax,total_payment_amount=total_payment_amount,
+        information_received=information_received,information_received_name=information_received_name,information_received_email=information_received_email,
+        information_received_phone=information_received_phone,information_received_address=information_received_address
+        )
+       
+        return render(request, 'dashboard/add_baohiem/addnhantho.html')    
+
 
 class AddTrangThaiPhiNhanTho(View):
     def get(self, request):
@@ -424,7 +488,12 @@ class CayGanNhomKinhDoanh(View):
 
 class TaiKhoan(View):
     def get(self, request):
-        return render(request, 'dashboard/ql_ctv/taikhoan.html')
+        data=Collaborators.objects.all()[:5]
+        print(data)
+        context={
+            "listdata" : data
+        }
+        return render(request, 'dashboard/ql_ctv/taikhoan.html',context)
 
 
 
