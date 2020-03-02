@@ -284,6 +284,7 @@ Trying again in 2.00 seconds...
 [2020-02-28 00:29:19,235: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
   warnings.warn('Using settings.DEBUG leads to a memory leak, never '
 [2020-02-28 00:29:19,237: INFO/MainProcess] celery@844b070d6f41 ready.
+<<<<<<< HEAD
 [2020-02-28 10:15:17,674: INFO/MainProcess] Connected to redis://redis:6379/0
 [2020-02-28 10:15:17,691: INFO/MainProcess] mingle: searching for neighbors
 [2020-02-28 10:15:18,724: INFO/MainProcess] mingle: all alone
@@ -302,3 +303,416 @@ Trying again in 2.00 seconds...
 [2020-03-02 02:23:42,566: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
   warnings.warn('Using settings.DEBUG leads to a memory leak, never '
 [2020-03-02 02:23:42,566: INFO/MainProcess] celery@290d4b18e52a ready.
+=======
+[2020-02-28 09:41:40,972: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-28 09:41:41,052: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-28 09:41:42,093: INFO/MainProcess] mingle: all alone
+[2020-02-28 09:41:42,135: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-28 09:41:42,136: INFO/MainProcess] celery@f194d10df534 ready.
+[2020-02-28 10:55:30,774: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-28 10:55:30,814: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-28 10:55:31,844: INFO/MainProcess] mingle: all alone
+[2020-02-28 10:55:31,879: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-28 10:55:31,879: INFO/MainProcess] celery@f194d10df534 ready.
+[2020-02-28 11:03:54,944: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-28 11:03:55,287: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-28 11:03:56,392: INFO/MainProcess] mingle: all alone
+[2020-02-28 11:03:56,489: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-28 11:03:56,490: INFO/MainProcess] celery@f194d10df534 ready.
+[2020-02-28 11:40:02,754: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-28 11:40:02,974: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-28 11:40:04,076: INFO/MainProcess] mingle: all alone
+[2020-02-28 11:40:04,177: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-28 11:40:04,177: INFO/MainProcess] celery@f194d10df534 ready.
+[2020-02-28 11:44:40,558: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-28 11:44:40,630: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-28 11:44:41,661: INFO/MainProcess] mingle: all alone
+[2020-02-28 11:44:41,679: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-28 11:44:41,679: INFO/MainProcess] celery@f194d10df534 ready.
+[2020-02-29 02:50:17,003: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-29 02:50:17,095: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-29 02:50:18,126: INFO/MainProcess] mingle: all alone
+[2020-02-29 02:50:18,326: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-29 02:50:18,327: INFO/MainProcess] celery@f194d10df534 ready.
+>>>>>>> 60d88bd4caf37ad386c90c1235ce243455e472ac
+[2020-03-02 02:26:48,514: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 02:26:48,540: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 02:26:49,601: INFO/MainProcess] mingle: all alone
+[2020-03-02 02:26:49,624: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 02:26:49,624: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 02:30:46,305: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 02:30:46,328: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 02:30:47,367: INFO/MainProcess] mingle: all alone
+[2020-03-02 02:30:47,389: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 02:30:47,389: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 02:35:50,843: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:37:49,163: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:37:59,319: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:40:05,714: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:42:45,144: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:43:35,830: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:43:48,472: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:47:11,031: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:49:08,651: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:49:48,326: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:50:48,455: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:50:57,872: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:55:15,524: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:55:33,357: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:56:41,434: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:57:15,705: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:58:46,337: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 02:58:57,809: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 03:00:19,166: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 03:06:56,104: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 03:07:50,971: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 03:14:21,512: ERROR/MainProcess] Received unregistered task of type 'apps.users.tasks.test_func'.
+The message has been ignored and discarded.
+
+Did you remember to import the module containing this task?
+Or maybe you're using relative imports?
+
+Please see
+http://docs.celeryq.org/en/latest/internals/protocol.html
+for more information.
+
+The full contents of the message body was:
+b'[[], {}, {"callbacks": null, "errbacks": null, "chain": null, "chord": null}]' (77b)
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/celery/worker/consumer/consumer.py", line 558, in on_task_received
+    strategy = strategies[type_]
+KeyError: 'apps.users.tasks.test_func'
+[2020-03-02 03:24:52,539: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 03:24:52,566: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 03:24:53,609: INFO/MainProcess] mingle: all alone
+[2020-03-02 03:24:53,658: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 03:24:53,658: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 03:25:04,215: INFO/MainProcess] Received task: apps.users.tasks.test_func[28d0fbfc-29b7-4935-9304-a2bfecc8934c]  
+[2020-03-02 03:25:04,218: WARNING/ForkPoolWorker-1] resssssssss=
+[2020-03-02 03:25:14,266: WARNING/ForkPoolWorker-1] 10 giay sau
+[2020-03-02 03:25:15,035: WARNING/ForkPoolWorker-1] 406
+[2020-03-02 03:25:15,040: INFO/ForkPoolWorker-1] Task apps.users.tasks.test_func[28d0fbfc-29b7-4935-9304-a2bfecc8934c] succeeded in 10.821695385999647s: None

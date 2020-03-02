@@ -25,7 +25,7 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" style="margin-bottom: 10px;" data-validate = "Valid email is required: ex@abc.xyz">
-            <input class="input100" type="text" name="email" placeholder="Số điện thoại">
+            <!-- <input class="input100" type="text" name="email" placeholder="Số điện thoại"> -->
             {{ f.username }}
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
@@ -33,7 +33,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input"  style="margin-bottom: 10px;" data-validate = "Valid email is required: ex@abc.xyz">
-            <input class="input100" type="text" name="email" placeholder="Mật khẩu">
+            <!-- <input class="input100" type="text" name="email" placeholder="Mật khẩu"> -->
             {{ f.password }}
 						<span class="focus-input100-1"></span>
 						<span class="focus-input100-2"></span>
@@ -47,6 +47,7 @@
 					</div>
 
 					<div class="container-login100-form-btn ">
+						{% csrf_token %}
 						<button class="login100-form-btn" type="submit" style="background-color: #F7981D;">
 							Đăng nhập
 						</button>
