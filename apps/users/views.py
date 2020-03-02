@@ -9,6 +9,8 @@ from . import utils as user_utils
 from . import serializers as user_sers
 from rest_framework import status
 from .models import LoginHistory
+from django.views import View
+from django.shortcuts import render, redirect
 
 
 
@@ -60,3 +62,33 @@ class UpdateInfoUserApi(APIView):
         user_models.UpdateUser.objects.filter(user_id = user_id ).update(username=username,fullname=fullname,phone=phone,email=email,password=password)  
 
         return Response(status=status.HTTP_200_OK)
+
+class LoginView(View):
+
+    def get(self, request):
+        message = ''
+        # fm = LoginForm()
+        # context = {'f': fm, 'message': message}
+        return render(request, 'login.html')
+
+    def post(self, request):
+        test_func.delay()
+        login_valid = LoginForm(request.POST)
+        fm = LoginForm()
+        message = "login thất bại"
+        context = {'f': fm, 'message': message}
+
+        redirect_to = request.GET.get('next', '') 
+
+        if login_valid.is_valid():
+            username = login_valid.cleaned_data['username']
+            password = login_valid.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if not user:
+                return render(request, 'login.html', context)
+            login(request, user)
+            if redirect_to == '':
+                return redirect('index_page')
+            return redirect(redirect_to)
+        else:
+            return render(request, 'login.html', context)

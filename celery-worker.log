@@ -284,3 +284,21 @@ Trying again in 2.00 seconds...
 [2020-02-28 00:29:19,235: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
   warnings.warn('Using settings.DEBUG leads to a memory leak, never '
 [2020-02-28 00:29:19,237: INFO/MainProcess] celery@844b070d6f41 ready.
+[2020-02-28 10:15:17,674: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-28 10:15:17,691: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-28 10:15:18,724: INFO/MainProcess] mingle: all alone
+[2020-02-28 10:15:18,736: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-28 10:15:18,736: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-02-28 11:03:58,874: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-02-28 11:03:58,893: INFO/MainProcess] mingle: searching for neighbors
+[2020-02-28 11:03:59,999: INFO/MainProcess] mingle: all alone
+[2020-02-28 11:04:00,027: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-02-28 11:04:00,027: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 02:23:41,451: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 02:23:41,506: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 02:23:42,552: INFO/MainProcess] mingle: all alone
+[2020-03-02 02:23:42,566: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 02:23:42,566: INFO/MainProcess] celery@290d4b18e52a ready.

@@ -23,6 +23,7 @@ from apps.users import views as user_view
 
 urlpatterns = [
    path('', include('apps.dashboard.urls')),
+   path('dang-nhap/', user_view.LoginView.as_view(), name='login_url'),
 
     #api url
 
