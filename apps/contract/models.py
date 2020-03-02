@@ -63,7 +63,6 @@ class OderProductPortal(models.Model):
     is_update = models.BooleanField(default=False)
 
 
-<<<<<<< HEAD
 class Collaborators(models.Model):
     user = models.CharField(max_length=200)
     userid_mua = models.CharField(max_length=200) #user id mua
@@ -132,7 +131,6 @@ class ContractInformation(models.Model):
 
 
 
-=======
 class OderProductHomeModel(models.Model):
     name = models.CharField(max_length=200)
     sotienquybaohiem = models.CharField(max_length=200)
@@ -160,4 +158,3 @@ class OderProductHomeModel(models.Model):
     product_id = models.IntegerField(default=0)
     order_status = models.IntegerField(default=0)
     secret = models.CharField(max_length=200)
->>>>>>> 563c6e4440f8f9cc47c9538a0cb23d88295c0c25
