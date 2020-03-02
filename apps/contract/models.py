@@ -63,6 +63,7 @@ class OderProductPortal(models.Model):
     is_update = models.BooleanField(default=False)
 
 
+<<<<<<< HEAD
 class Collaborators(models.Model):
     user = models.CharField(max_length=200)
     userid_mua = models.CharField(max_length=200) #user id mua
@@ -131,3 +132,32 @@ class ContractInformation(models.Model):
 
 
 
+=======
+class OderProductHomeModel(models.Model):
+    name = models.CharField(max_length=200)
+    sotienquybaohiem = models.CharField(max_length=200)
+    tylephi = models.CharField(max_length=200)
+    product_type = models.CharField(max_length=200)
+    company = models.CharField(max_length=200)
+    sonamhopdong = models.IntegerField(default=0)
+    sonamdongphi = models.IntegerField(default=0)
+
+    home_age = models.IntegerField(default=0)
+    thanh_pho = models.CharField(max_length=200)
+    huyen = models.CharField(max_length=200)
+    address = models.CharField(max_length=200)
+    phone = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    address1 = models.CharField(max_length=200)
+
+    ma_hoa_don = models.CharField(max_length=200)
+    so_tien = models.IntegerField(default=0)
+    loai_san_pham = models.CharField(default='',max_length=200) 
+    so_dien_thoai = models.CharField(max_length=200)
+    status1 = models.IntegerField(default=0)
+    created_at = models.CharField(max_length=200)
+    vnp_TransactionNo = models.CharField(max_length=200)
+    product_id = models.IntegerField(default=0)
+    order_status = models.IntegerField(default=0)
+    secret = models.CharField(max_length=200)
+>>>>>>> 563c6e4440f8f9cc47c9538a0cb23d88295c0c25

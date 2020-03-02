@@ -12,10 +12,14 @@ from .models import LoginHistory
 from django.views import View
 from django.shortcuts import render, redirect
 from django.conf import settings
+<<<<<<< HEAD
+from .models import User
+=======
 from apps.users.tasks import test_func
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
+>>>>>>> 3be43c56aa0d71244d51beab13ff44da59252487
 
 
 
@@ -53,8 +57,10 @@ class GetUserInfoAPIView(APIView):
 
 
 class UpdateInfoUserApi(APIView):
-    permission_classes = (permissions.AllowAny,)
-
+    """
+    API này để lưu cập nhật thông tin user khi có sự thay đổi từ sàn thương mại điện tử
+    Cập nhật thành công: 200
+    """
     def post(self, request, format=None):
         valid_data = validate_data(user_sers.UpdateUsertApiSer, request.data)
         user_id = valid_data.get("user_id")
@@ -63,6 +69,8 @@ class UpdateInfoUserApi(APIView):
         phone = valid_data.get("phone")
         email = valid_data.get("email")
         password = valid_data.get("password")
+<<<<<<< HEAD
+=======
 
         user_models.UpdateUser.objects.filter(user_id = user_id ).update(username=username,fullname=fullname,phone=phone,email=email,password=password)  
 
@@ -137,38 +145,24 @@ class InfoOrderUserApi(APIView):
         vnp_TransactionNo = valid_data.get('vnp_TransactionNo')
         product_id = valid_data.get('product_id')
         order_status = valid_data.get('order_status')
+>>>>>>> 3be43c56aa0d71244d51beab13ff44da59252487
         secret = valid_data.get('secret')
 
-
         data_dict={}
-        data_dict['name'] = name
-        data_dict['sotienquybaohiem'] = sotienquybaohiem
-        data_dict['tylephi'] = tylephi
-        data_dict['product_type'] = product_type
-        data_dict['company'] = company
-        data_dict['sonamhopdong'] = sonamhopdong
-        data_dict['sonamdongphi'] = sonamdongphi
-
-        data_dict['home_age'] = home_age
-        data_dict['thanh_pho'] = thanh_pho
-        data_dict['huyen'] = huyen
-        data_dict['address'] = address
+        data_dict['user_id'] = user_id
+        data_dict['username'] = username
+        data_dict['fullname'] = fullname
         data_dict['phone'] = phone
         data_dict['email'] = email
-        data_dict['address1'] = address1
-
-        data_dict['ma_hoa_don'] = ma_hoa_don
-        data_dict['so_tien'] = so_tien
-        data_dict['loai_san_pham'] = loai_san_pham
-        data_dict['so_dien_thoai'] = so_dien_thoai
-        data_dict['status1'] = status1
-        data_dict['created_at'] = created_at
-        data_dict['vnp_TransactionNo'] = vnp_TransactionNo
-        data_dict['product_id'] = product_id
-        data_dict['order_status'] = order_status
+        data_dict['password'] = password
         data_dict['secret'] = secret
-        
-        if validate_response(data_dict,settings.VNROBOT_API_KEY):
+
+        if validate_response(data_dict, settings.VNROBOT_API_KEY):
+            if not User.objects.filter(username=username).exists():
+                User.objects.create(username=username, password=password)
+            else:
+                User.objects.filter(username=username).update(username=username, password=password)
+                return Response('', status.HTTP_204_NO_CONTENT)
             return Response('', status.HTTP_200_OK)
         else:
             return Response('', status.HTTP_401_UNAUTHORIZED)
