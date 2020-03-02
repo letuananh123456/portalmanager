@@ -78,29 +78,29 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Họ tên bên mua BH: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="" placeholder="">
+                                  <input type="text" class="form-control" id="" name="buyer" placeholder="" >
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Giới tính: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Chọn giới tính</option>
-                                    <option>Nam</option>
-                                    <option>Nữ</option>
+                                <select class="form-control" name="buyer_sex">
+                                    <option value="" >Chọn giới tính</option>
+                                    <option value="0">Nam</option>
+                                    <option value="1">Nữ</option>
                                   </select>
                             </div>
                         </div>
                           <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Số CMND: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="" placeholder="">
+                                  <input type="text" name="buyer_cmnd" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Thêm ảnh: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="file" class="btn btn btn-danger" onclick="addRowFK()" value="">
+                                <input type="file" name="buyer_image" class="btn btn btn-danger" onclick="addRowFK()" value="">
                             </div>
                         </div>
                           
@@ -110,19 +110,19 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label"> Ngày sinh:(<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="date" class="form-control" id="" placeholder="">
+                                  <input type="date" name="buyer_birth" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Số điện thoại: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="" placeholder="">
+                                  <input type="text" name="buyer_phone" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Email: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="buyer_email" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                           </div>
@@ -150,19 +150,19 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Họ tên người được BH: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="" placeholder="">
+                                  <input type="text" name="receiver" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Số CMND/Giấy khai sinh: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="receiver_cmnd" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Thêm ảnh: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="file" class="btn btn btn-danger" onclick="addRowFK()" value="">
+                                <input type="file" name="receiver_image" class="btn btn btn-danger" onclick="addRowFK()" value="">
                                 
                             </div>
                         </div>
@@ -174,16 +174,16 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label"> Ngày sinh:(<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="date" class="form-control" id="" placeholder="">
+                                  <input type="date" name="receiver_birth" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Giới tính: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Chọn giới tính</option>
-                                    <option>Nam</option>
-                                    <option>Nữ</option>
+                                <select class="form-control" name="receiver_sex">
+                                    <option value="">Chọn giới tính</option>
+                                    <option value="0">Nam</option>
+                                    <option value="1" >Nữ</option>
                                   </select>
                             </div>
                         </div>
@@ -211,30 +211,30 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Họ tên người thụ hưởng: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="" placeholder="">
+                                  <input type="text" name="beneficiary" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Số CMND/Giấy khai sinh: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="beneficiary_cmnd" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Quan hệ với người được bảo hiểm: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Chọn quan hệ</option>
-                                    <option>Vợ /Chồng</option>
-                                    <option>Bố/Mẹ</option>
-                                    <option>Con trai/Con Gái</option>
+                                <select class="form-control" name="beneficiary_relationship">
+                                    <option value="">Chọn quan hệ</option>
+                                    <option value="0">Vợ /Chồng</option>
+                                    <option value="1">Bố/Mẹ</option>
+                                    <option value="2">Con trai/Con Gái</option>
                                   </select>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Thêm ảnh: (<span>*</span>)</label>
                             <div class="col-sm-8" style="overflow: hidden;">
-                                <input type="file" class="btn btn-danger" onclick="addRowFK()" value="">
+                                <input type="file" name="beneficiary_image" class="btn btn-danger" onclick="addRowFK()" value="">
                                 
                             </div>
                         </div>
@@ -245,16 +245,16 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label"> Ngày sinh:(<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="date" class="form-control" id="" placeholder="">
+                                  <input type="date" name="beneficiary_birth" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Giới tính: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Chọn giới tính</option>
-                                    <option>Nam</option>
-                                    <option>Nữ</option>
+                                <select class="form-control" name="beneficiary_sex">
+                                    <option value="0">Chọn giới tính</option>
+                                    <option value="1">Nam</option>
+                                    <option value="2">Nữ</option>
                                   </select>
                             </div>
                         </div>
@@ -309,7 +309,7 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Họ tên : (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                  <input type="text" class="form-control" id="" placeholder="">
+                                  <input name="presenter_name" type="text" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                     
@@ -318,7 +318,7 @@
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Số user ID: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="presenter_id" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                           
@@ -345,28 +345,28 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Tên sản phẩm: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Chọn sản phẩm</option>
-                                    <option>Phúc bảo an trường thịnh</option>
+                                <select class="form-control" name="product_name">
+                                    <option value="">Chọn sản phẩm</option>
+                                    <option value="0">Phúc bảo an trường thịnh</option>
                                   </select>
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Công ty: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input name="product_company" type="text" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Phí đóng: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input name="product_phi" type="text" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Số năm hợp đồng: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="product_year_contract" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                        
@@ -376,19 +376,19 @@
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Số năm đóng phí: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input name="product_year_phi" type="text" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Tần suất đóng phí: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="product_frequency_phi" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Số tiền BH: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input name="product_insurance_money" type="text" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                          
@@ -415,28 +415,28 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Tên sản phẩm: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Chọn sản phẩm</option>
-                                    <option>Phúc bảo an trường thịnh</option>
+                                <select class="form-control" name="supplementary_product_name">
+                                    <option value="">Chọn sản phẩm</option>
+                                    <option value="0" >Phúc bảo an trường thịnh</option>
                                   </select>
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Công ty: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="supplementary_product_company" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Phí đóng: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input name="supplementary_product_phi" type="text" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Số năm hợp đồng: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="supplementary_product_year_contract" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                        
@@ -446,19 +446,19 @@
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Số năm đóng phí: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="supplementary_product_year_phi" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Tần suất đóng phí: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="supplementary_product_frequency_phi" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Số tiền BH: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="supplementary_product_insurance_money" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                          
@@ -487,22 +487,22 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Phí đóng SP chính: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                <select class="form-control">
-                                    <option>Chọn sản phẩm</option>
-                                    <option>Phúc bảo an trường thịnh</option>
+                                <select class="form-control" name="pay_main_product">
+                                    <option value="">Chọn sản phẩm</option>
+                                    <option value="0">Phúc bảo an trường thịnh</option>
                                   </select>
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Phí đóng SP phụ: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="pay_phu_product" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Tổng phí BH: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="pay_total_phi" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                        
@@ -513,13 +513,13 @@
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Thuế VAT: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="pay_tax" class="form-control" id="" placeholder="">
                                 </div>
                             </div>  
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label" style="color:red;font-size: 16px;">Tổng số tiền thanh toán: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="total_payment_amount" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                             
@@ -549,19 +549,19 @@
                             <div class="form-group">
                               <label for="input3" class="col-sm-4 control-label">Thông tin người nhận ĐH: (<span>*</span>)</label>
                               <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="information_received" class="form-control" id="" placeholder="">
                               </div>
                           </div>
                           <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Họ và tên nguời nhận: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="information_received_name" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="input3" class="col-sm-4 control-label">Email người nhận: (<span>*</span>)</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="" placeholder="">
+                                <input type="text" name="information_received_email" class="form-control" id="" placeholder="">
                             </div>
                         </div>
                        
@@ -572,13 +572,13 @@
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Sđt người nhận: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="information_received_phone" class="form-control" id="" placeholder="">
                                 </div>
                             </div>  
                             <div class="form-group">
                                 <label for="input3" class="col-sm-4 control-label">Địa chỉ người nhận: (<span>*</span>)</label>
                                 <div class="col-sm-8">
-                                    <input type="text" class="form-control" id="" placeholder="">
+                                    <input type="text" name="information_received_address" class="form-control" id="" placeholder="">
                                 </div>
                             </div>
                             
@@ -593,7 +593,8 @@
                  
               </div>
               </div>
-              <button type="button" class="btn btn-danger btn-lg" style="float: right;margin-right: 20px;">Gửi</button>
+              {% csrf_token %}
+              <button type="submit"  class="btn btn-danger btn-lg" style="float: right;margin-right: 20px;">Gửi</button>
               <button type="button" class="btn btn-warning btn-lg" style="float: right;margin-right: 20px;">Duyệt hồ sơ</button>
         </div>
     </form>

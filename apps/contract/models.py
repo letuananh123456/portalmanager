@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 
 class ConvertProduct(models.Model):
@@ -62,6 +63,76 @@ class OderProductPortal(models.Model):
     is_update = models.BooleanField(default=False)
 
 
+<<<<<<< HEAD
+class Collaborators(models.Model):
+    user = models.CharField(max_length=200)
+    userid_mua = models.CharField(max_length=200) #user id mua
+    fullname = models.CharField(max_length=200)
+    number_YCBH = models.CharField(max_length=200)
+    number_policy = models.CharField(max_length=200)
+    company = models.IntegerField(default=0)
+    name_product = models.CharField(max_length=200)
+    type_product = models.IntegerField(default=0)
+    sumit_date = models.DateField()
+    release_date = models.DateField()
+    ack_date = models.DateField()
+    ack_status = models.IntegerField(default=0)
+    status_policy = models.IntegerField(default=0)
+    premium = models.IntegerField(default=0)
+    bv_premium = models.IntegerField(default=0)
+    status_payment = models.IntegerField(default=0)
+    is_update = models.BooleanField()
+
+
+class ContractInformation(models.Model):
+    buyer = models.CharField(max_length=200)
+    buyer_sex = models.IntegerField(default=0)
+    buyer_cmnd = models.CharField(max_length=200)
+    buyer_image = models.ImageField(upload_to = 'contract/', null=True)
+    buyer_birth = models.DateField()
+    buyer_phone = models.CharField(max_length=200)
+    buyer_email = models.CharField(max_length=200)
+    receiver = models.CharField(max_length=200)
+    receiver_cmnd = models.CharField(max_length=200)
+    receiver_image = models.ImageField(upload_to = 'contract/', null=True)
+    receiver_birth = models.DateField()
+    receiver_sex = models.IntegerField(default=0)
+    beneficiary = models.CharField(max_length=200)
+    beneficiary_cmnd = models.CharField(max_length=200)
+    beneficiary_relationship = models.IntegerField(default=0)
+    beneficiary_image = models.ImageField(upload_to = 'contract/', null=True)
+    beneficiary_birth = models.DateField()
+    beneficiary_sex = models.IntegerField(default=0)
+    presenter_name = models.CharField(max_length=200)
+    presenter_id = models.IntegerField(default=0)
+    product_name = models.IntegerField(default=0)
+    product_company = models.CharField(max_length=200)
+    product_phi = models.IntegerField(default=0)
+    product_year_contract = models.IntegerField(default=0)
+    product_year_phi = models.IntegerField(default=0)
+    product_frequency_phi = models.IntegerField(default=0)
+    product_insurance_money = models.IntegerField(default=0)
+    supplementary_product_name = models.IntegerField(default=0)
+    supplementary_product_company = models.CharField(max_length=200)
+    supplementary_product_phi = models.IntegerField(default=0)
+    supplementary_product_year_contract = models.IntegerField(default=0)
+    supplementary_product_year_phi = models.IntegerField(default=0)
+    supplementary_product_frequency_phi = models.IntegerField(default=0)
+    supplementary_product_insurance_money = models.IntegerField(default=0)
+    pay_main_product = models.IntegerField(default=0)
+    pay_phu_product = models.IntegerField(default=0)
+    pay_total_phi = models.IntegerField(default=0)
+    pay_tax = models.IntegerField(default=0)
+    total_payment_amount = models.IntegerField(default=0)
+    information_received = models.CharField(max_length=200)
+    information_received_name = models.CharField(max_length=200)
+    information_received_email = models.CharField(max_length=200)
+    information_received_phone = models.CharField(max_length=200)
+    information_received_address = models.CharField(max_length=200)
+
+
+
+=======
 class OderProductHomeModel(models.Model):
     name = models.CharField(max_length=200)
     sotienquybaohiem = models.CharField(max_length=200)
@@ -89,3 +160,4 @@ class OderProductHomeModel(models.Model):
     product_id = models.IntegerField(default=0)
     order_status = models.IntegerField(default=0)
     secret = models.CharField(max_length=200)
+>>>>>>> 563c6e4440f8f9cc47c9538a0cb23d88295c0c25

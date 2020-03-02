@@ -6,7 +6,7 @@ from .models import AgentTotal
 from .models import NewAgent, FavoriteBenefit, FavoriteProduct, Favorite_Product_Benefit
 from .models import AgentChannel, Province, LocationContact, MainBenefit, MainProduct, Main_Product_Benefit
 from .models import ChannelSuccess, DaySuccess, MonthSuccess, DayContact, SupBenefit, SupProduct, Sup_Product_Benefit
-
+from apps.contract.models import ConvertProduct
 class ChannelContactAdmin(admin.ModelAdmin):
     list_display = ('id', 'distribution', 'number_customer', 'created_time')
 
@@ -101,3 +101,4 @@ admin.site.register(Sup_Product_Benefit, Sup_Product_BenefitAdmin)
 admin.site.register(FavoriteBenefit, FavoriteBenefitAdmin)
 admin.site.register(FavoriteProduct, FavoriteProductAdmin)
 admin.site.register(Favorite_Product_Benefit, Favorite_Product_BenefitAdmin)
+admin.site.register(ConvertProduct)

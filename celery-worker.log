@@ -772,4 +772,67 @@ KeyError: 'apps.users.tasks.test_func'
 [2020-03-02 03:25:14,266: WARNING/ForkPoolWorker-1] 10 giay sau
 [2020-03-02 03:25:15,035: WARNING/ForkPoolWorker-1] 406
 [2020-03-02 03:25:15,040: INFO/ForkPoolWorker-1] Task apps.users.tasks.test_func[28d0fbfc-29b7-4935-9304-a2bfecc8934c] succeeded in 10.821695385999647s: None
+<<<<<<< HEAD
+[2020-03-02 03:27:13,565: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 03:27:13,585: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 03:27:14,611: INFO/MainProcess] mingle: all alone
+[2020-03-02 03:27:14,623: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 03:27:14,623: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 03:27:24,633: INFO/MainProcess] Received task: apps.users.tasks.test_func[4a6ef0f2-ad66-4225-ac37-50b70464e78c]  
+[2020-03-02 03:27:24,635: WARNING/ForkPoolWorker-1] resssssssss=
+[2020-03-02 03:27:33,577: INFO/MainProcess] Received task: apps.users.tasks.test_func[3ea42a18-58df-4fd1-8c48-4cbed55fda6b]  
+[2020-03-02 03:27:33,579: WARNING/ForkPoolWorker-2] resssssssss=
+[2020-03-02 03:27:34,641: WARNING/ForkPoolWorker-1] 10 giay sau
+[2020-03-02 03:27:35,261: WARNING/ForkPoolWorker-1] 406
+[2020-03-02 03:27:35,263: INFO/ForkPoolWorker-1] Task apps.users.tasks.test_func[4a6ef0f2-ad66-4225-ac37-50b70464e78c] succeeded in 10.628296142999716s: None
+[2020-03-02 03:27:43,580: WARNING/ForkPoolWorker-2] 10 giay sau
+[2020-03-02 03:27:44,193: WARNING/ForkPoolWorker-2] 406
+[2020-03-02 03:27:44,196: INFO/ForkPoolWorker-2] Task apps.users.tasks.test_func[3ea42a18-58df-4fd1-8c48-4cbed55fda6b] succeeded in 10.61714498099991s: None
+[2020-03-02 03:29:05,786: INFO/MainProcess] Received task: apps.users.tasks.test_func[d0e9f9da-bcbd-4012-bade-8d4e46a389ac]  
+[2020-03-02 03:29:05,808: WARNING/ForkPoolWorker-1] resssssssss=
+[2020-03-02 03:29:15,817: WARNING/ForkPoolWorker-1] 10 giay sau
+[2020-03-02 03:29:16,460: WARNING/ForkPoolWorker-1] 406
+[2020-03-02 03:29:16,460: INFO/ForkPoolWorker-1] Task apps.users.tasks.test_func[d0e9f9da-bcbd-4012-bade-8d4e46a389ac] succeeded in 10.65229183700012s: None
+[2020-03-02 03:29:38,721: INFO/MainProcess] Received task: apps.users.tasks.test_func[88f625ff-5ff0-4800-b809-12045ba9fa1e]  
+[2020-03-02 03:29:38,723: WARNING/ForkPoolWorker-2] resssssssss=
+[2020-03-02 03:29:48,730: WARNING/ForkPoolWorker-2] 10 giay sau
+[2020-03-02 03:29:49,266: WARNING/ForkPoolWorker-2] 406
+[2020-03-02 03:29:49,267: INFO/ForkPoolWorker-2] Task apps.users.tasks.test_func[88f625ff-5ff0-4800-b809-12045ba9fa1e] succeeded in 10.544699035000122s: None
+[2020-03-02 03:30:18,486: INFO/MainProcess] Received task: apps.users.tasks.test_func[2350065a-8c36-4fd9-b98e-5c797b659b82]  
+[2020-03-02 03:30:18,488: WARNING/ForkPoolWorker-1] resssssssss=
+[2020-03-02 03:30:28,497: WARNING/ForkPoolWorker-1] 10 giay sau
+[2020-03-02 03:30:29,074: WARNING/ForkPoolWorker-1] 406
+[2020-03-02 03:30:29,076: INFO/ForkPoolWorker-1] Task apps.users.tasks.test_func[2350065a-8c36-4fd9-b98e-5c797b659b82] succeeded in 10.588053596999998s: None
+[2020-03-02 03:34:01,669: INFO/MainProcess] Received task: apps.users.tasks.test_func[dc9a6d90-0b5c-47f5-9bce-dbceb9e00210]  
+[2020-03-02 03:34:01,670: WARNING/ForkPoolWorker-2] resssssssss=
+[2020-03-02 03:34:11,681: WARNING/ForkPoolWorker-2] 10 giay sau
+[2020-03-02 03:34:12,304: WARNING/ForkPoolWorker-2] 406
+[2020-03-02 03:34:12,305: INFO/ForkPoolWorker-2] Task apps.users.tasks.test_func[dc9a6d90-0b5c-47f5-9bce-dbceb9e00210] succeeded in 10.634724556000037s: None
+[2020-03-02 03:54:24,418: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 03:54:24,429: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 03:54:25,464: INFO/MainProcess] mingle: all alone
+[2020-03-02 03:54:25,479: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 03:54:25,479: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 08:42:02,135: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 08:42:02,185: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 08:42:03,208: INFO/MainProcess] mingle: all alone
+[2020-03-02 08:42:03,232: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 08:42:03,233: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 10:13:20,022: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 10:13:20,041: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 10:13:21,088: INFO/MainProcess] mingle: all alone
+[2020-03-02 10:13:21,142: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 10:13:21,142: INFO/MainProcess] celery@290d4b18e52a ready.
+[2020-03-02 10:56:05,283: INFO/MainProcess] Connected to redis://redis:6379/0
+[2020-03-02 10:56:05,323: INFO/MainProcess] mingle: searching for neighbors
+[2020-03-02 10:56:06,360: INFO/MainProcess] mingle: all alone
+[2020-03-02 10:56:06,403: WARNING/MainProcess] /usr/local/lib/python3.6/site-packages/celery/fixups/django.py:200: UserWarning: Using settings.DEBUG leads to a memory leak, never use this setting in production environments!
+  warnings.warn('Using settings.DEBUG leads to a memory leak, never '
+[2020-03-02 10:56:06,403: INFO/MainProcess] celery@290d4b18e52a ready.
+=======
 >>>>>>> 3be43c56aa0d71244d51beab13ff44da59252487
+>>>>>>> 563c6e4440f8f9cc47c9538a0cb23d88295c0c25
