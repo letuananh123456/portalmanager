@@ -836,3 +836,36 @@ KeyError: 'apps.users.tasks.test_func'
 =======
 >>>>>>> 3be43c56aa0d71244d51beab13ff44da59252487
 >>>>>>> 563c6e4440f8f9cc47c9538a0cb23d88295c0c25
+[2020-03-03 04:52:57,106: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 2.00 seconds...
+
+[2020-03-03 04:52:59,113: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 4.00 seconds...
+
+[2020-03-03 04:53:03,123: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 6.00 seconds...
+
+[2020-03-03 04:53:09,140: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 8.00 seconds...
+
+[2020-03-03 04:53:17,160: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 10.00 seconds...
+
+[2020-03-03 04:53:27,151: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 12.00 seconds...
+
+[2020-03-03 04:53:39,181: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 14.00 seconds...
+
+[2020-03-03 04:53:53,219: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 16.00 seconds...
+
+[2020-03-03 04:54:09,231: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 18.00 seconds...
+
+[2020-03-03 04:54:27,243: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 20.00 seconds...
+
+[2020-03-03 04:54:47,297: ERROR/MainProcess] consumer: Cannot connect to redis://redis:6379/0: Error 111 connecting to redis:6379. Connection refused..
+Trying again in 22.00 seconds...
+
