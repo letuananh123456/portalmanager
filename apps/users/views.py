@@ -12,14 +12,11 @@ from .models import LoginHistory
 from django.views import View
 from django.shortcuts import render, redirect
 from django.conf import settings
-<<<<<<< HEAD
 from .models import User
-=======
 from apps.users.tasks import test_func
 from .forms import LoginForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
->>>>>>> 3be43c56aa0d71244d51beab13ff44da59252487
 
 
 
@@ -69,8 +66,6 @@ class UpdateInfoUserApi(APIView):
         phone = valid_data.get("phone")
         email = valid_data.get("email")
         password = valid_data.get("password")
-<<<<<<< HEAD
-=======
 
         user_models.UpdateUser.objects.filter(user_id = user_id ).update(username=username,fullname=fullname,phone=phone,email=email,password=password)  
 
@@ -145,7 +140,7 @@ class InfoOrderUserApi(APIView):
         vnp_TransactionNo = valid_data.get('vnp_TransactionNo')
         product_id = valid_data.get('product_id')
         order_status = valid_data.get('order_status')
->>>>>>> 3be43c56aa0d71244d51beab13ff44da59252487
+
         secret = valid_data.get('secret')
 
         data_dict={}
