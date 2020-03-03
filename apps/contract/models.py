@@ -63,7 +63,7 @@ class OderProductPortal(models.Model):
     is_update = models.BooleanField(default=False)
 
 
-<<<<<<< HEAD
+
 class Collaborators(models.Model):
     user = models.CharField(max_length=200)
     userid_mua = models.CharField(max_length=200) #user id mua
