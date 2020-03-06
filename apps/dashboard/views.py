@@ -10,6 +10,7 @@ import numpy as np
 from apps.contract.models import Collaborators
 import json
 from .ultils import *
+from apps.contract.models import LifeContract
 class DashboardView(View):
     def get(self, request):
         return render(request, 'dashboard/index.html')
@@ -37,8 +38,12 @@ class LifecontractView(View):
         #     'list_data': c
 
         # }
+        a = LifeContract()
+        context = {'lc': a}
+        return render(request, 'dashboard/duyet_chuyenhd/lifecontract.html', context)
 
-        return render(request, 'dashboard/duyet_chuyenhd/lifecontract.html')
+   
+            
 
 
 class NonLifecontractView(View):
