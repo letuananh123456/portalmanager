@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
+from django.utils import timezone
 # Create your models here.
 
 class ConvertProduct(models.Model):
@@ -158,4 +159,15 @@ class OderProductHomeModel(models.Model):
     product_id = models.IntegerField(default=0)
     order_status = models.IntegerField(default=0)
     secret = models.CharField(max_length=200)
+
+class LifeContract(models.Model):
+    ben_mua_BH = models.CharField(max_length = 200)
+    ngay_dat_mua = models.DateField(default = timezone.datetime.now())
+    nguoi_GT = models.IntegerField(default = 0)
+    ten_san_pham = models.CharField(max_length = 155)
+    loai_san_pham = models.CharField(max_length = 155)
+    congty = models.CharField(max_length = 200)
+    phi_bao_hiem = models.IntegerField(default = 0)
+    loai_hop_dong = models.IntegerField(default = 0)
+    
 
