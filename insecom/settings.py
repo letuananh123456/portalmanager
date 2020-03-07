@@ -39,10 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
+    'ckeditor',
+    'ckeditor_uploader',
     'apps.dashboard',
     'apps.contract',
     'apps.core',
     'apps.users',
+    
   
 
 
