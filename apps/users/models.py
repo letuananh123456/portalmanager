@@ -21,6 +21,15 @@ def generate_access_token(user_id):
     return access_token
 
 
+class User(AbstractUser):
+    GIOITINH = (('0','Nữ'),('1','Nam'))
+    hoten = models.CharField(max_length=30,verbose_name='Họ tên',null=True)
+    cmnd = models.CharField(max_length=15, verbose_name='CMND/ Thẻ căn cước')
+    ngaysinh = models.DateField(verbose_name="Ngày sinh",null=True,)
+    gioitinh = models.CharField(max_length=1,choices=GIOITINH, verbose_name="Giới tính")
+    phong = models.CharField(max_length=200, verbose_name="Phòng")
+    chucvu = models.CharField(max_length=200, verbose_name="Chức vụ")
+
 class Token(models.Model):
     """
     The default authorization token model.
@@ -129,3 +138,7 @@ class UserCTV(models.Model):
 
     def __str__(self):
         return self.username
+
+
+
+

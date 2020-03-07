@@ -11,6 +11,8 @@ from apps.contract.models import Collaborators
 import json
 from .ultils import *
 from apps.contract.models import LifeContract
+from apps.users.forms import ProfileForm
+from apps.users.models import User
 class DashboardView(View):
     def get(self, request):
         return render(request, 'dashboard/index.html')
@@ -95,6 +97,9 @@ class CustomerView(View):
 
 class PersonalinformationView(View):
     def get(self, request):
+        user = User.objects.get(id=request.user.id)
+        form = ProfileForm(instance=user)
+        # form = ProfileForm()
         # list_customer = DaySuccess.objects.all()
         # count_list_customer = list_customer.count()
         # last_month = list_customer[count_list_customer - 30:]
@@ -139,8 +144,29 @@ class PersonalinformationView(View):
         #     'list_data_3': list_data_3,
         #     'list_data_1': list_data_1,
         # }
-        return render(request, 'dashboard/profile/personalinformation.html')
+        context = {
+            # 'hoten':user.hoten,
+            # 'cmnd':user.cmnd,
+            # 'ngaysinh':user.ngaysinh,
+            # 'gioitinh':user.gioitinh,
+        }
+        return render(request, 'dashboard/profile/personalinformation.html',{'form':form})
 
+    def post(self, request, *args, **kwargs):
+        user = User.objects.get(id=request.user.id)
+        form = ProfileForm(request.POST,instance=user)
+        if request.method == "POST":
+            if form.is_valid():
+                hoten = form.cleaned_data.get('hoten')
+                cm = form.cleaned_data.get('cmnd')
+                date = form.cleaned_data.get('ngaysinh')
+                gioitinh = form.cleaned_data.get('gioitinh')
+                user.hoten = hoten
+                user.cmnd = cm
+                user.ngaysinh = date
+                user.gioitinh = gioitinh
+                user.save()
+            return redirect('dashboard:personalinformation')
 
 
 class ChangepasswordView(View):

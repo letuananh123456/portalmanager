@@ -1,7 +1,6 @@
 from django.contrib import admin
 
-from .models import Token, LoginHistory, Notification, UserNotification
-
+from .models import Token, LoginHistory, Notification, UserNotification, User
 
 class TokenAdmin(admin.ModelAdmin):
     list_display = ('key', 'user', 'created')
@@ -27,3 +26,5 @@ admin.site.register(Token, TokenAdmin)
 admin.site.register(LoginHistory, LoginHistoryAdmin)
 admin.site.register(Notification, NotificationAdmin)
 admin.site.register(UserNotification, UserNotificationAdmin)
+admin.site.register(User)
+

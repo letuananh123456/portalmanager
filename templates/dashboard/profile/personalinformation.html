@@ -20,19 +20,21 @@
 <link rel="stylesheet" href="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}">
 <link rel="stylesheet" href="{% static 'dashboard/dist/daysuccess.css' %}"> {% endblock %} {% block content %}
 <style>
-.page-header{
-    color: #3c8dbc;
-    font-weight: 550;
-    font-size: 20px;
-    text-align: center;
-}
-.row span{
-  color: red;
-}
-.block-center{
-  display: flex;
-    justify-content: center;
-}
+    .page-header {
+        color: #3c8dbc;
+        font-weight: 550;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .row span {
+        color: red;
+    }
+
+    .block-center {
+        display: flex;
+        justify-content: center;
+    }
 </style>
 
 <br>
@@ -41,101 +43,114 @@
         <div class="box">
             <!-- /.box-header -->
             <section class="content">
-              <h1 class="page-header"><i class="fa fa-folder-open"></i> Thông tin cá nhân</h1>
-              <div class="row block-center">
-                  <div class="col-md-7" >
-                      <form action="" method="post">
+                <h1 class="page-header"><i class="fa fa-folder-open"></i> Thông tin cá nhân</h1>
+                <div class="row block-center">
+                    <div class="col-md-7">
+                        <form action="" method="POST">
+                            {% csrf_token %}
+                            <!-- {{ form }} -->
+                            {{ form.ngaysinh }}
+                            <!-- <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">User Name(sđt): (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" value="{{ request.user }}" disabled="disabled"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div> -->
 
-                          <div class="form-group">
-                              <div class="row">
-                                  <label class="col-md-3">User Name(sđt):  (<span>*</span>)</label>
-                                  <div class="col-md-9">
-                                      <input type="text" value="csbestlife7" disabled="disabled" class="form-control">
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="row">
-                                <label class="col-md-3">Họ tên: (<span>*</span>)</label>
-                                <div class="col-md-9">
-                                    <input name="fullname" value="Nguyễn Thị Ngọc" type="text" class="form-control">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">Họ tên: (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <input name="hoten" value="{{ form.hoten.value }}" type="text"
+                                            class="form-control" id='id_hoten'>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                          <div class="form-group">
-                              <div class="row">
-                                  <label class="col-md-3">Email:  (<span>*</span>)</label>
-                                  <div class="col-md-9">
-                                      <input disabled="disabled" value="nguyenngocth1411@gmail.com" type="text" class="form-control">
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="row">
-                                  <label class="col-md-3">Số CMND/Thẻ căn cước: (<span>*</span>)</label>
-                                  <div class="col-md-9">
-                                      <input name="cmnd" value="175011220" type="text" class="form-control">
-                                  </div>
-                              </div>
-                          </div>
-                         
-
-                          <div class="form-group">
-                              <div class="row">
-                                  <label class="col-md-3">Ngày sinh: (<span>*</span>)</label>
-                                  <div class="col-md-9">
-                                      <input name="dob" type="date" class="form-control" value="1995-08-25">
-                                  </div>
-                              </div>
-                          </div>
-                          
-                          <div class="form-group">
-                              <div class="row">
-                                  <label class="col-md-3">Giới tính: (<span>*</span>)</label>
-                                  <div class="col-md-9">
-                                      <select name="gender" class="form-control">
-                                          <option value="">-- Chọn giới tính--</option>
-                                          <option value="male">Nam</option>
-                                          <option selected="" value="female">Nữ</option>
-                                          <option value="other">Khác</option>
-                                      </select>
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                            <div class="row">
-                                <label class="col-md-3">Phòng: (<span>*</span>)</label>
-                                <div class="col-md-9">
-                                    <input disabled="disabled" value="Dịch Vụ Khách Hàng" type="text" class="form-control">
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">Email: (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <input disabled="disabled" value="{{ request.user.email }}" type="text"
+                                            class="form-control" name="email">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        
-                          <div class="form-group">
-                              <div class="row">
-                                  <label class="col-md-3">Chức vụ: (<span>*</span>)</label>
-                                  <div class="col-md-9">
-                                      <input disabled="disabled" value="Thành viên" type="text" class="form-control">
-                                  </div>
-                              </div>
-                          </div>
-                          <div class="form-group">
-                              <div class="row">
-                                  <label class="col-md-3"></label>
-                                  <div class="col-md-9">
-                                      <button type="submit" class="btn btn-primary pull-left"><i class="icon ion-paper-airplane"></i> Cập nhật</button>
-                                  </div>
-                              </div>
-                          </div>
-                      </form>
-                  </div>
-              </div>
-          
-          </section>
+
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">Số CMND/Thẻ căn cước: (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="cmnd" value="{{ form.cmnd.value }}" maxlength="15"
+                                            required="" id="id_cmnd" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">Ngày sinh: (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <input type="text" name="ngaysinh" value="{{ form.ngaysinh.value|date:"Y-m-d"}}"
+                                            required="" id="id_ngaysinh">
+                                        <!-- <input type="text" name="ngaysinh" valu    e="{{ form.ngaysinh.value }}" required="" id="id_ngaysinh"> -->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">Giới tính: (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" name="gioitinh">
+                                            {% for name,value in form.fields.gioitinh.choices  %}
+                                            {% if name == form.gioitinh.value %}
+                                            <option value="{{ name }}" selected name="gioitinh">{{ value }}</option>
+                                            {% else %}
+                                            <option value="{{ name }}" name="gioitinh">{{ value }}</option>
+                                            {% endif %}
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">Phòng: (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <input disabled="disabled" value="{{ request.user.phong }}" type="text"
+                                            class="form-control" name="phong">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3">Chức vụ: (<span>*</span>)</label>
+                                    <div class="col-md-9">
+                                        <input disabled="disabled" value="{{ request.user.chucvu }}" type="text"
+                                            class="form-control" name="chucvu">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <label class="col-md-3"></label>
+                                    <div class="col-md-9">
+                                        <button type="submit" class="btn btn-primary pull-left"><i
+                                                class="icon ion-paper-airplane"></i> Cập nhật</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </section>
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
-
         {% endblock %} {% block jsblock %}
         <script src="{% static 'dashboard/bower_components/jquery/dist/jquery.min.js' %}"></script>
         <!-- jQuery UI 1.11.4 -->
@@ -160,7 +175,9 @@
         <script src="{% static 'dashboard/bower_components/moment/min/moment.min.js' %}"></script>
         <script src="{% static 'dashboard/bower_components/bootstrap-daterangepicker/daterangepicker.js' %}"></script>
         <!-- datepicker -->
-        <script src="{% static 'dashboard/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}"></script>
+        <script
+            src="{% static 'dashboard/bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js' %}">
+        </script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="{% static 'dashboard/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}"></script>
         <!-- Slimscroll -->
