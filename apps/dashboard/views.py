@@ -144,12 +144,7 @@ class PersonalinformationView(View):
         #     'list_data_3': list_data_3,
         #     'list_data_1': list_data_1,
         # }
-        context = {
-            # 'hoten':user.hoten,
-            # 'cmnd':user.cmnd,
-            # 'ngaysinh':user.ngaysinh,
-            # 'gioitinh':user.gioitinh,
-        }
+
         return render(request, 'dashboard/profile/personalinformation.html',{'form':form})
 
     def post(self, request, *args, **kwargs):
